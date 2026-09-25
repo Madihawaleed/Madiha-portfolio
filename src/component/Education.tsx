@@ -110,6 +110,8 @@ const Education = () => {
                                     "MongoDB",
                                     "TypeScript",
                                     "AWS",
+                                    "Git",
+                                    "Jira"
                                 ].map((skill) => (
                                     <span
                                         key={skill}
