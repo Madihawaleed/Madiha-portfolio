@@ -10,30 +10,9 @@ import {
 import { RiMailSendLine } from "react-icons/ri";
 import { useTheme } from "../App";
 
-const form = useRef<HTMLFormElement>(null);
 
-const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
 
-    if (!form.current) return;
 
-    emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        {
-            publicKey: "YOUR_PUBLIC_KEY",
-        }
-    )
-        .then(() => {
-            alert("Message sent successfully!");
-            form.current?.reset();
-        })
-        .catch((error) => {
-            console.log(error);
-            alert("Failed to send message.");
-        });
-};
 
 const Contact = () => {
     const { darkMode } = useTheme();
