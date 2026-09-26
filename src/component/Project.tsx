@@ -41,15 +41,7 @@ const projects = [
         description:
             "Command-line applications built to perform development and utility tasks.",
         tech: ["Node.js", "TypeScript", "CLI"],
-    },
-    {
-        title: "AI Teacher",
-        image:
-            "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80",
-        description:
-            "AI-powered learning application designed for interactive student learning.",
-        tech: ["React", "Node.js", "Express.js", "MongoDB", "AI"],
-    },
+    }
 ];
 
 const Projects = () => {
@@ -130,7 +122,7 @@ const Projects = () => {
                                             }`}
                                     >
                                         <FaGithub />
-                                        GitHub
+                                        GitHub ajdakskl
                                     </a>
 
                                     <a
