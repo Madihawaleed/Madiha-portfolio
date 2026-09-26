@@ -49,8 +49,7 @@ const skills = [
   'Tailwind CSS',
   'Remix Icon',
   'Font Awesome',
-  'Web-RTC',
-  'Socket.io',
+
 ]
 
 function App() {

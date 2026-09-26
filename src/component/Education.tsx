@@ -103,15 +103,22 @@ const Education = () => {
 
                             <div className="flex flex-wrap gap-2 mt-5">
                                 {[
+                                    "GenAi",
                                     "React.js",
                                     "Next.js",
                                     "Node.js",
                                     "Express.js",
                                     "MongoDB",
                                     "TypeScript",
-                                    "AWS",
+                                    "AWS Cloud",
                                     "Git",
-                                    "Jira"
+                                    "Jira",
+                                    "Kafka",
+                                    "Redis",
+                                    "CI/CD",
+                                    "BullMQ"
+
+
                                 ].map((skill) => (
                                     <span
                                         key={skill}
