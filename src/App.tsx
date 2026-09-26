@@ -263,18 +263,7 @@ function App() {
 
 
 
-                <a
-                  href="https://linkedin.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                  className={`flex h-10 w-10 items-center justify-center rounded-full border transition ${darkMode
-                    ? 'border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/30 hover:text-white'
-                    : 'border-slate-200 bg-white text-slate-500 hover:border-violet-400 hover:text-violet-600'
-                    }`}
-                >
-                  <FaLinkedinIn />
-                </a>
+
 
               </div>
 
