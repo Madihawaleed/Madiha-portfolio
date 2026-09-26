@@ -68,8 +68,8 @@ function App() {
     <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
       <main
         className={`min-h-screen overflow-hidden transition-colors duration-500 ${darkMode
-            ? 'bg-[#06060a] text-white'
-            : 'bg-[#fafaff] text-slate-900'
+          ? 'bg-[#06060a] text-white'
+          : 'bg-[#fafaff] text-slate-900'
           }`}
       >
         {/* Background */}
@@ -102,8 +102,8 @@ function App() {
           {/* Navbar */}
           <nav
             className={`flex items-center justify-between border-b py-5 sm:py-7 ${darkMode
-                ? 'border-white/10'
-                : 'border-slate-200'
+              ? 'border-white/10'
+              : 'border-slate-200'
               }`}
           >
             <a
@@ -116,8 +116,8 @@ function App() {
             {/* Desktop Navigation */}
             <div
               className={`hidden items-center gap-8 text-sm md:flex ${darkMode
-                  ? 'text-zinc-400'
-                  : 'text-slate-500'
+                ? 'text-zinc-400'
+                : 'text-slate-500'
                 }`}
             >
               <a
@@ -165,8 +165,8 @@ function App() {
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
                 className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${darkMode
-                    ? 'border-white/10 bg-white/[0.04] text-yellow-300 hover:border-yellow-300/40 hover:bg-yellow-300/10'
-                    : 'border-slate-200 bg-white text-slate-700 shadow-sm hover:border-violet-400 hover:bg-violet-50'
+                  ? 'border-white/10 bg-white/[0.04] text-yellow-300 hover:border-yellow-300/40 hover:bg-yellow-300/10'
+                  : 'border-slate-200 bg-white text-slate-700 shadow-sm hover:border-violet-400 hover:bg-violet-50'
                   }`}
               >
                 {darkMode ? <FaSun /> : <FaMoon />}
@@ -176,8 +176,8 @@ function App() {
               <a
                 href="#contact"
                 className={`rounded-full border px-3.5 py-2 text-xs font-medium transition sm:px-5 sm:py-2.5 sm:text-sm ${darkMode
-                    ? 'border-white/15 hover:border-fuchsia-400 hover:bg-fuchsia-400/10'
-                    : 'border-slate-300 bg-white hover:border-violet-400 hover:bg-violet-50'
+                  ? 'border-white/15 hover:border-fuchsia-400 hover:bg-fuchsia-400/10'
+                  : 'border-slate-300 bg-white hover:border-violet-400 hover:bg-violet-50'
                   }`}
               >
                 Let's talk
@@ -205,8 +205,8 @@ function App() {
 
               <p
                 className={`mb-5 text-sm font-medium ${darkMode
-                    ? 'text-slate-400'
-                    : 'text-slate-500'
+                  ? 'text-slate-400'
+                  : 'text-slate-500'
                   }`}
               >
                 Full Stack Developer
@@ -222,8 +222,8 @@ function App() {
 
               <p
                 className={`mt-6 max-w-2xl text-sm leading-6 sm:mt-7 sm:text-lg sm:leading-7 ${darkMode
-                    ? 'text-zinc-400'
-                    : 'text-slate-500'
+                  ? 'text-zinc-400'
+                  : 'text-slate-500'
                   }`}
               >
                 Full Stack Developer focused on building responsive
@@ -237,8 +237,8 @@ function App() {
                 <a
                   href="#work"
                   className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-semibold transition hover:scale-105 ${darkMode
-                      ? 'bg-white text-zinc-950'
-                      : 'bg-slate-900 text-white'
+                    ? 'bg-white text-zinc-950'
+                    : 'bg-slate-900 text-white'
                     }`}
                 >
                   View my work
@@ -249,8 +249,8 @@ function App() {
                   href="/resume.pdf"
                   download
                   className={`inline-flex items-center justify-center gap-3 rounded-full border px-6 py-3 text-sm font-semibold transition ${darkMode
-                      ? 'border-white/15 text-zinc-300 hover:border-white/40 hover:text-white'
-                      : 'border-slate-300 bg-white text-slate-700 hover:border-violet-400 hover:text-violet-600'
+                    ? 'border-white/15 text-zinc-300 hover:border-white/40 hover:text-white'
+                    : 'border-slate-300 bg-white text-slate-700 hover:border-violet-400 hover:text-violet-600'
                     }`}
                 >
                   Resume
@@ -261,18 +261,7 @@ function App() {
               {/* Social */}
               <div className="mt-8 flex items-center gap-4">
 
-                <a
-                  href="https://github.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="GitHub"
-                  className={`flex h-10 w-10 items-center justify-center rounded-full border transition ${darkMode
-                      ? 'border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/30 hover:text-white'
-                      : 'border-slate-200 bg-white text-slate-500 hover:border-violet-400 hover:text-violet-600'
-                    }`}
-                >
-                  <FaGithub />
-                </a>
+
 
                 <a
                   href="https://linkedin.com/"
@@ -280,8 +269,8 @@ function App() {
                   rel="noreferrer"
                   aria-label="LinkedIn"
                   className={`flex h-10 w-10 items-center justify-center rounded-full border transition ${darkMode
-                      ? 'border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/30 hover:text-white'
-                      : 'border-slate-200 bg-white text-slate-500 hover:border-violet-400 hover:text-violet-600'
+                    ? 'border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/30 hover:text-white'
+                    : 'border-slate-200 bg-white text-slate-500 hover:border-violet-400 hover:text-violet-600'
                     }`}
                 >
                   <FaLinkedinIn />
@@ -294,8 +283,8 @@ function App() {
 
                 <p
                   className={`mb-4 text-[10px] font-semibold uppercase tracking-[0.3em] ${darkMode
-                      ? 'text-zinc-500'
-                      : 'text-slate-400'
+                    ? 'text-zinc-500'
+                    : 'text-slate-400'
                     }`}
                 >
                   Technologies I work with
@@ -307,8 +296,8 @@ function App() {
                     <span
                       key={skill}
                       className={`rounded-full border px-3 py-1.5 text-xs transition ${darkMode
-                          ? 'border-white/10 bg-white/[0.035] text-zinc-400 hover:border-fuchsia-400/40 hover:bg-fuchsia-400/10 hover:text-fuchsia-200'
-                          : 'border-slate-200 bg-white text-slate-500 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-600'
+                        ? 'border-white/10 bg-white/[0.035] text-zinc-400 hover:border-fuchsia-400/40 hover:bg-fuchsia-400/10 hover:text-fuchsia-200'
+                        : 'border-slate-200 bg-white text-slate-500 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-600'
                         }`}
                     >
                       {skill}
@@ -337,8 +326,8 @@ function App() {
               {/* Card */}
               <div
                 className={`relative rounded-[1.5rem] border p-2.5 shadow-2xl backdrop-blur-xl sm:rounded-[2rem] sm:p-3 ${darkMode
-                    ? 'border-white/10 bg-white/[0.04]'
-                    : 'border-white bg-white/70 shadow-violet-200/50'
+                  ? 'border-white/10 bg-white/[0.04]'
+                  : 'border-white bg-white/70 shadow-violet-200/50'
                   }`}
               >
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem]">
@@ -351,8 +340,8 @@ function App() {
 
                   <div
                     className={`absolute inset-0 bg-gradient-to-t ${darkMode
-                        ? 'from-[#06060a]'
-                        : 'from-slate-900/80'
+                      ? 'from-[#06060a]'
+                      : 'from-slate-900/80'
                       } via-transparent to-transparent`}
                   />
 
@@ -399,8 +388,8 @@ function App() {
           <section className="py-16 sm:py-24">
             <div
               className={`relative overflow-hidden rounded-3xl border px-6 py-10 text-center sm:px-10 sm:py-14 ${darkMode
-                  ? 'border-white/10 bg-white/[0.03]'
-                  : 'border-slate-200 bg-white/70'
+                ? 'border-white/10 bg-white/[0.03]'
+                : 'border-slate-200 bg-white/70'
                 }`}
             >
 
@@ -425,8 +414,8 @@ function App() {
 
                 <p
                   className={`mx-auto mt-3 max-w-xl text-sm leading-6 sm:text-base ${darkMode
-                      ? 'text-zinc-400'
-                      : 'text-slate-500'
+                    ? 'text-zinc-400'
+                    : 'text-slate-500'
                     }`}
                 >
                   Have a project, opportunity, or role in mind?
@@ -436,8 +425,8 @@ function App() {
                 <a
                   href="#contact"
                   className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:scale-105 sm:w-auto ${darkMode
-                      ? 'bg-white text-zinc-950'
-                      : 'bg-slate-900 text-white'
+                    ? 'bg-white text-zinc-950'
+                    : 'bg-slate-900 text-white'
                     }`}
                 >
                   Let's Connect
@@ -451,8 +440,8 @@ function App() {
           {/* Footer */}
           <footer
             className={`border-t py-8 text-center text-xs ${darkMode
-                ? 'border-white/10 text-zinc-500'
-                : 'border-slate-200 text-slate-400'
+              ? 'border-white/10 text-zinc-500'
+              : 'border-slate-200 text-slate-400'
               }`}
           >
             <p>
