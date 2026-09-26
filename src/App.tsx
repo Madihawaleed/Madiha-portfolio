@@ -33,7 +33,8 @@ export const useTheme = () => {
 }
 
 const skills = [
-  'React',
+  'React.js',
+  "Next.js",
   'Node.js',
   'Express.js',
   'MongoDB',
