@@ -114,16 +114,6 @@ const Projects = () => {
                                 </div>
 
                                 <div className="flex gap-5 mt-6">
-                                    <a
-                                        href="#"
-                                        className={`flex items-center gap-2 text-sm hover:text-cyan-400 ${darkMode
-                                            ? "text-white"
-                                            : "text-slate-700"
-                                            }`}
-                                    >
-                                        <FaGithub />
-                                        GitHub ajdakskl
-                                    </a>
 
                                     <a
                                         href="#"
