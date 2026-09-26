@@ -60,7 +60,7 @@ function Skills() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, index) => (
           <ScrollReveal key={group.title} delayMs={index * 100}>
-          <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_40%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-black/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl hover:shadow-black/20">
+          <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_40%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-gray-400/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl hover:shadow-gray-300/20">
             <div aria-hidden="true" className={`pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r ${group.accent} opacity-50 transition-opacity duration-300 group-hover:opacity-90`} />
             <div aria-hidden="true" className={`absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${group.accent} opacity-[0.07] blur-3xl transition duration-500 group-hover:opacity-[0.13]`} />
             <div className="relative">

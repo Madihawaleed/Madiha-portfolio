@@ -21,14 +21,14 @@ const Projects = () => (
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <ScrollReveal key={project.title} delayMs={Math.min(index * 90, 360)}>
-          <article className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.07),rgba(255,255,255,0.025)_38%,rgba(34,211,238,0.06))] shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/25 hover:shadow-xl hover:shadow-black/20">
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-fuchsia-300/0 via-violet-300/60 to-cyan-300/0 opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-            <div className="relative aspect-[16/9] overflow-hidden bg-zinc-900"><img src={project.image} alt={project.title} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]" /><div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#090a0e]/45 via-transparent to-transparent" /></div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+          <article className="project-card group relative isolate overflow-hidden rounded-2xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.07),rgba(255,255,255,0.025)_38%,rgba(34,211,238,0.06))] shadow-lg shadow-gray-400/10 transition duration-500 hover:-translate-y-2 hover:border-cyan-200/25 hover:shadow-xl hover:shadow-gray-300/20">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-20 h-px bg-gradient-to-r from-fuchsia-300/0 via-violet-200/80 to-cyan-300/0 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="relative z-10 aspect-[16/9] overflow-hidden bg-zinc-900"><img src={project.image} alt={project.title} loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105" /><div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#090a0e]/65 via-[#090a0e]/5 to-transparent transition-colors duration-500 group-hover:from-[#090a0e]/45" /><div aria-hidden="true" className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/[0.08] transition duration-300 group-hover:ring-cyan-100/20" /></div>
+            <div className="relative z-10 p-6">
+              <h3 className="text-xl font-semibold text-white transition-colors duration-300 group-hover:text-cyan-100">{project.title}</h3>
               <p className="mt-3 text-sm leading-6 text-gray-300">{project.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">{project.tech.map((item) => <span key={item} className="rounded-full border border-white/[0.07] bg-white/[0.035] px-3 py-1 text-xs text-zinc-300">{item}</span>)}</div>
-              <div className="mt-6"><a href="#" className="flex items-center gap-2 text-sm text-zinc-200 transition-colors duration-300 hover:text-teal-200"><FaExternalLinkAlt />Live Demo</a></div>
+              <div className="mt-5 flex flex-wrap gap-2">{project.tech.map((item) => <span key={item} className="rounded-full border border-white/[0.07] bg-white/[0.035] px-3 py-1 text-xs text-zinc-300 transition duration-300 group-hover:border-white/[0.12] group-hover:bg-white/[0.055]">{item}</span>)}</div>
+              <div className="mt-6"><a href="#" className="project-demo-link inline-flex items-center gap-2 text-sm font-medium text-zinc-200 transition-colors duration-300 hover:text-teal-200"><FaExternalLinkAlt aria-hidden="true" />Live Demo <span aria-hidden="true" className="ml-0.5 transition-transform duration-300 group-hover:translate-x-1">↗</span></a></div>
             </div>
           </article>
           </ScrollReveal>

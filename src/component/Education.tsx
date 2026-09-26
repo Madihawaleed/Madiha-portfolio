@@ -20,7 +20,7 @@ const Education = () => (
       </div>
       <div className="grid gap-8 md:grid-cols-2">
         <ScrollReveal animation="animate__fadeInLeft">
-        <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_42%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/20 sm:p-8">
+        <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_42%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-gray-400/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/20 hover:shadow-gray-300/20 sm:p-8">
           <div aria-hidden="true" className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-fuchsia-300/0 via-violet-300/60 to-cyan-300/0" />
           <div className="flex items-center gap-5">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 transition group-hover:scale-110"><FaGraduationCap className="text-3xl text-cyan-400" /></div>
@@ -31,7 +31,7 @@ const Education = () => (
         </article>
         </ScrollReveal>
         <ScrollReveal animation="animate__fadeInRight" delayMs={100}>
-        <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_42%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/20 sm:p-8">
+        <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_42%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-gray-400/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/20 hover:shadow-gray-300/20 sm:p-8">
           <div aria-hidden="true" className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-fuchsia-300/0 via-violet-300/60 to-cyan-300/0" />
           <div className="flex items-center gap-5">
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 transition group-hover:scale-110"><FaCode className="text-3xl text-cyan-400" /></div>

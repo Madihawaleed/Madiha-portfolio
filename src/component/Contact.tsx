@@ -26,7 +26,7 @@ const Contact = () => {
           <p className="mx-auto mt-5 max-w-2xl text-gray-400">Have a project or opportunity in mind? Feel free to get in touch.</p>
         </ScrollReveal>
         <ScrollReveal animation="animate__fadeInUp">
-        <form onSubmit={sendEmail} className="space-y-5 rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(148,163,184,0.13),rgba(39,39,42,0.18)_48%,rgba(100,116,139,0.12))] p-6 shadow-xl shadow-black/15 transition duration-300 hover:border-slate-300/20 sm:p-8 md:p-10">
+        <form onSubmit={sendEmail} className="space-y-5 rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(148,163,184,0.13),rgba(39,39,42,0.18)_48%,rgba(100,116,139,0.12))] p-6 shadow-xl shadow-gray-400/10 transition duration-300 hover:border-slate-300/20 hover:shadow-gray-300/20 sm:p-8 md:p-10">
           <div>
             <label htmlFor="contact-name" className="text-sm text-gray-300">Name</label>
             <input id="contact-name" type="text" name="name" autoComplete="name" required placeholder="Your name" className="mt-2 w-full rounded-xl border border-white/[0.09] bg-black/15 px-4 py-3 text-white outline-none transition duration-300 placeholder:text-gray-600 focus:border-cyan-200/35 focus:ring-2 focus:ring-cyan-200/10" />

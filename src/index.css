@@ -39,12 +39,60 @@ html {
   animation: availability-pulse 2.4s ease-in-out infinite;
 }
 
+.brand-gray-shimmer {
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(110deg, #99f6e4 0%, #6ee7b7 28%, #ecfeff 48%, #67e8f9 68%, #a7f3d0 100%);
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: brand-gray-shimmer 3.2s ease-in-out infinite;
+}
+
+.hello-wave {
+  transform-origin: 75% 75%;
+  animation: hello-wave 2s ease-in-out infinite;
+}
+
+@keyframes hello-wave {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(16deg); }
+  40%, 80% { transform: rotate(-8deg); }
+}
+
+@keyframes brand-gray-shimmer {
+  0%, 100% { background-position: 100% 0; }
+  50% { background-position: 0 0; }
+}
+
+.availability-copy {
+  display: inline-block;
+  color: transparent;
+  background: linear-gradient(100deg, #a7f3d0 0%, #bbf7d0 35%, #ffffff 50%, #bbf7d0 65%, #a7f3d0 100%);
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: availability-copy-shimmer 2.8s ease-in-out infinite;
+}
+
+@keyframes availability-copy-shimmer {
+  0%, 100% { background-position: 100% 0; filter: brightness(0.92); transform: translateY(0); }
+  50% { background-position: 0 0; filter: brightness(1.18); transform: translateY(-1px); }
+}
+
 .hero-skill-chip {
   border: 1px solid transparent;
   background:
     linear-gradient(#101116, #101116) padding-box,
     linear-gradient(115deg, rgb(217 70 239 / 16%), rgb(139 92 246 / 14%), rgb(34 211 238 / 16%)) border-box;
   transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
+}
+
+.hero-skill-icon {
+  color: #c4b5fd;
+  transition: transform 240ms ease, filter 240ms ease, color 240ms ease;
 }
 
 .hero-skill-chip:hover {
@@ -55,8 +103,73 @@ html {
   box-shadow: 0 5px 16px rgb(139 92 246 / 11%);
 }
 
+.hero-skill-chip:hover .hero-skill-icon {
+  filter: brightness(1.35) drop-shadow(0 0 5px rgb(103 232 249 / 38%));
+  transform: translateY(-1px) rotate(-8deg) scale(1.12);
+}
+
+.hire-me-attention {
+  position: relative;
+  isolation: isolate;
+}
+
+.hire-me-attention::after {
+  position: absolute;
+  z-index: -1;
+  inset: -3px;
+  border: 1px solid rgb(196 181 253 / 65%);
+  border-radius: inherit;
+  content: '';
+  pointer-events: none;
+  animation: hire-me-pop 2s ease-out infinite;
+}
+
+@keyframes hire-me-pop {
+  0% { opacity: 0.75; transform: scale(0.98); }
+  75%, 100% { opacity: 0; transform: scale(1.14); }
+}
+
 .hero-float-field {
   contain: layout paint;
+}
+
+.project-card::after {
+  position: absolute;
+  z-index: 0;
+  top: -5rem;
+  right: -5rem;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgb(34 211 238 / 14%), rgb(139 92 246 / 9%) 42%, transparent 72%);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+.profile-image-frame::before,
+.developer-title-frame::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from 0deg, transparent 0deg 295deg, rgb(217 70 239 / 28%) 315deg, rgb(139 92 246 / 90%) 332deg, rgb(34 211 238 / 95%) 348deg, transparent 360deg);
+  content: '';
+  animation: profile-border-rotate 5s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes profile-border-rotate {
+  to { transform: rotate(1turn); }
 }
 
 .section-with-floats {
@@ -203,10 +316,42 @@ html {
     animation: none;
   }
 
+  .brand-gray-shimmer {
+    animation: none;
+  }
+
+  .hello-wave {
+    animation: none;
+  }
+
+  .availability-copy {
+    animation: none;
+  }
+
   .hero-skill-chip,
   .hero-skill-chip:hover {
     transform: none;
     transition: none;
+  }
+
+  .hero-skill-icon,
+  .hero-skill-chip:hover .hero-skill-icon {
+    filter: none;
+    transform: none;
+    transition: none;
+  }
+
+  .hire-me-attention::after {
+    animation: none;
+  }
+
+  .hire-me-attention.animate__animated {
+    animation: none !important;
+  }
+
+  .profile-image-frame::before,
+  .developer-title-frame::before {
+    animation: none;
   }
 
   .hero-float-dot {
