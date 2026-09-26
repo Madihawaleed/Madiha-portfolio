@@ -43,12 +43,15 @@ const skills = [
   'Docker',
   'Redis',
   'Kafka',
+  'RabitMq',
+  'BullMq',
   'Git',
   'Jira',
   'Ant Design',
   'Tailwind CSS',
   'Remix Icon',
   'Font Awesome',
+
 
 ]
 
@@ -109,7 +112,7 @@ function App() {
               href="/"
               className="text-xl font-bold tracking-tight"
             >
-              Madiha<span className="text-fuchsia-400">.</span>
+              Hi! Madiha<span className="text-fuchsia-400">.</span>
             </a>
 
             {/* Navigation */}
@@ -158,6 +161,16 @@ function App() {
               >
                 Work
               </a>
+
+              <a
+                href="#why-hire-me"
+                className={`transition ${darkMode
+                  ? 'hover:text-white'
+                  : 'hover:text-slate-900'
+                  }`}
+              >
+                Why Hire Me
+              </a>
             </div>
 
             {/* Right Side */}
@@ -200,25 +213,18 @@ function App() {
             <div className="relative z-10">
 
               {/* Availability */}
-              <div className="mb-6 flex items-center gap-3">
+              <div className="mb-4 flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-100 shadow-[0_0_10px_rgba(70,911,300,0.9)] animate-pulse" />
 
-                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,.8)]" />
-
-                <span
-                  className={`text-xs font-semibold uppercase tracking-[0.3em] ${darkMode
-                    ? 'text-zinc-400'
-                    : 'text-slate-500'
-                    }`}
-                >
-                  Available for opportunities
+                <span className="text-sm font-medium text-emerald-300">
+                  Open to New Opportunities
                 </span>
-
               </div>
 
               <p
                 className={`mb-5 text-sm font-medium ${darkMode
-                  ? 'text-fuchsia-300'
-                  : 'text-violet-600'
+                  ? "text-slate-400"
+                  : "text-slate-500"
                   }`}
               >
                 Full Stack Developer
