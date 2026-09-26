@@ -103,20 +103,29 @@ const Education = () => {
 
                             <div className="flex flex-wrap gap-2 mt-5">
                                 {[
-                                    "GenAi",
-                                    "React.js",
+                                    'Gen AI',
+                                    'React.js',
+                                    'Tailwind CSS',
                                     "Next.js",
-                                    "Node.js",
-                                    "Express.js",
-                                    "MongoDB",
-                                    "TypeScript",
-                                    "AWS Cloud",
-                                    "Git",
-                                    "Jira",
-                                    "Kafka",
-                                    "Redis",
+                                    'Node.js',
+                                    'Express.js',
+                                    'TypeScript',
                                     "CI/CD",
-                                    "BullMQ"
+                                    'MongoDB',
+                                    "Postgresql",
+                                    "ORM Prisma",
+                                    'AWS Cloud',
+                                    'Docker',
+                                    'Redis',
+                                    'Kafka',
+                                    'RabitMq',
+                                    'BullMq',
+                                    'Git',
+                                    'Jira',
+                                    'Ant Design',
+                                    'Remix Icon',
+                                    'Font Awesome',
+
 
 
                                 ].map((skill) => (
