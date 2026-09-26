@@ -1,171 +1,87 @@
-import { FaAws } from 'react-icons/fa'
-
+import { FaAws, FaBrain, FaLayerGroup } from 'react-icons/fa'
 import {
-    SiReact,
-    SiTypescript,
-    SiTailwindcss,
-    SiAntdesign,
-    SiRemix,
-    SiFontawesome,
-    SiNodedotjs,
-    SiExpress,
-    SiMongodb,
-    SiRedis,
-    SiApachekafka,
-    SiGit,
-    SiGithub,
-    SiJira,
-    SiDocker,
-    SiGithubactions,
+  SiReact, SiTypescript, SiTailwindcss, SiAntdesign, SiRemix, SiFontawesome, SiNextdotjs,
+  SiNodedotjs, SiExpress, SiMongodb, SiRedis, SiApachekafka, SiGit, SiJira, SiDocker,
+  SiGithubactions, SiPostgresql, SiPrisma, SiRabbitmq,
 } from 'react-icons/si'
-
-import { useTheme } from '../App'
+import ScrollReveal from './ScrollReveal'
+import FloatingDots from './FloatingDots'
 
 const skillGroups = [
-    {
-        number: '01',
-        title: 'Frontend',
-        description: 'Interfaces that feel clear, responsive, and effortless.',
-        accent: 'from-fuchsia-400 to-violet-400',
-        skills: [
-            { name: 'React', icon: SiReact, color: 'text-cyan-300' },
-            { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-300' },
-            { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-300' },
-            { name: 'Ant Design', icon: SiAntdesign, color: 'text-red-300' },
-            { name: 'Remix Icon', icon: SiRemix, color: 'text-blue-300' },
-            { name: 'Font Awesome', icon: SiFontawesome, color: 'text-blue-300' },
-        ],
-    },
-    {
-        number: '02',
-        title: 'Backend',
-        description: 'Scalable systems built for reliable product experiences.',
-        accent: 'from-violet-400 to-cyan-400',
-        skills: [
-            { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-300' },
-            { name: 'Express.js', icon: SiExpress, color: 'text-zinc-200' },
-            { name: 'MongoDB', icon: SiMongodb, color: 'text-green-300' },
-            { name: 'Redis', icon: SiRedis, color: 'text-red-300' },
-            { name: 'Kafka', icon: SiApachekafka, color: 'text-zinc-200' },
-            { name: 'AWS', icon: FaAws, color: 'text-orange-300' },
-        ],
-    },
-    {
-        number: '03',
-        title: 'Workflow tools',
-        description: 'A structured process from first idea to final delivery.',
-        accent: 'from-cyan-400 to-emerald-400',
-        skills: [
-            { name: 'Git', icon: SiGit, color: 'text-orange-300' },
-            { name: 'GitHub', icon: SiGithub, color: 'text-zinc-900' },
-            { name: 'Jira', icon: SiJira, color: 'text-blue-300' },
-            { name: 'Docker', icon: SiDocker, color: 'text-blue-300' },
-            { name: 'CI/CD', icon: SiGithubactions, color: 'text-purple-300' },
-        ],
-    },
+  {
+    number: '01', title: 'Frontend', description: 'Interfaces that feel clear, responsive, and effortless.', accent: 'from-fuchsia-400 to-violet-400',
+    skills: [
+      { name: 'React.js', icon: SiReact, color: 'text-cyan-300' }, { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-300' },
+      { name: 'Next.js', icon: SiNextdotjs, color: 'text-zinc-100' }, { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-300' },
+      { name: 'Ant Design', icon: SiAntdesign, color: 'text-red-300' }, { name: 'Remix Icon', icon: SiRemix, color: 'text-blue-300' },
+      { name: 'Font Awesome', icon: SiFontawesome, color: 'text-blue-300' },
+    ],
+  },
+  {
+    number: '02', title: 'Backend', description: 'Reliable services and intelligent features that support useful products.', accent: 'from-violet-400 to-cyan-400',
+    skills: [
+      { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-300' }, { name: 'Express.js', icon: SiExpress, color: 'text-zinc-200' },
+      { name: 'Gen AI', icon: FaBrain, color: 'text-violet-300' },
+    ],
+  },
+  {
+    number: '03', title: 'Database & ORM', description: 'Organized data and fast access patterns for dependable applications.', accent: 'from-blue-400 to-cyan-400',
+    skills: [
+      { name: 'MongoDB', icon: SiMongodb, color: 'text-green-300' }, { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-sky-300' },
+      { name: 'Prisma ORM', icon: SiPrisma, color: 'text-indigo-300' }, { name: 'Redis', icon: SiRedis, color: 'text-red-300' },
+    ],
+  },
+  {
+    number: '04', title: 'Cloud & DevOps', description: 'Tools for shipping, deploying, and maintaining software.', accent: 'from-cyan-400 to-emerald-400',
+    skills: [
+      { name: 'AWS Cloud', icon: FaAws, color: 'text-orange-300' }, { name: 'Docker', icon: SiDocker, color: 'text-sky-300' },
+      { name: 'CI/CD', icon: SiGithubactions, color: 'text-violet-300' }, { name: 'Git', icon: SiGit, color: 'text-orange-300' },
+      { name: 'Jira', icon: SiJira, color: 'text-blue-300' },
+    ],
+  },
+  {
+    number: '05', title: 'Messaging & Queues', description: 'Event-driven tools for asynchronous processing and communication.', accent: 'from-fuchsia-400 to-cyan-400',
+    skills: [
+      { name: 'Kafka', icon: SiApachekafka, color: 'text-zinc-200' }, { name: 'RabbitMQ', icon: SiRabbitmq, color: 'text-orange-300' },
+      { name: 'BullMQ', icon: FaLayerGroup, color: 'text-rose-300' },
+    ],
+  },
 ]
 
 function Skills() {
-    const { darkMode } = useTheme()
-
-    return (
-        <section
-            id="skills"
-            className={`relative border-t py-24 transition-colors duration-500 ${darkMode ? 'border-white/10' : 'border-slate-200'
-                }`}
-        >
-            <div className="mb-12 max-w-2xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-fuchsia-400">
-                    Capabilities
-                </p>
-
-                <h2
-                    className={`mt-4 text-3xl font-semibold tracking-tight sm:text-5xl ${darkMode ? 'text-white' : 'text-slate-900'
-                        }`}
-                >
-                    From first sketch
-                    <span className={darkMode ? 'text-zinc-500' : 'text-slate-400'}>
-                        {' '}to final deployment.
-                    </span>
-                </h2>
-
-                <p
-                    className={`mt-5 max-w-xl text-base leading-7 ${darkMode ? 'text-zinc-400' : 'text-slate-600'
-                        }`}
-                >
-                    A focused toolkit for creating polished interfaces, dependable backend
-                    systems, and efficient development workflows.
-                </p>
-            </div>
-
-            <div className="grid gap-5 lg:grid-cols-3">
-                {skillGroups.map((group) => (
-                    <article
-                        key={group.title}
-                        className={`group relative overflow-hidden rounded-3xl border p-7 backdrop-blur-xl transition duration-500 hover:-translate-y-2 ${darkMode
-                            ? 'border-white/10 bg-white/[0.045] hover:border-white/25'
-                            : 'border-slate-200 bg-white shadow-sm hover:border-cyan-300'
-                            }`}
-                    >
-                        <div
-                            className={`absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${group.accent} opacity-10 blur-3xl transition duration-500 group-hover:opacity-25`}
-                        />
-
-                        <div className="relative">
-                            <div className="flex items-center justify-between">
-                                <span
-                                    className={
-                                        darkMode ? 'text-sm text-zinc-600' : 'text-sm text-slate-400'
-                                    }
-                                >
-                                    {group.number}
-                                </span>
-
-                                <span
-                                    className={`h-px w-16 bg-gradient-to-r ${group.accent}`}
-                                />
-                            </div>
-
-                            <h3
-                                className={`mt-16 text-2xl font-semibold tracking-tight ${darkMode ? 'text-white' : 'text-slate-900'
-                                    }`}
-                            >
-                                {group.title}
-                            </h3>
-
-                            <p
-                                className={`mt-3 min-h-14 text-sm leading-6 ${darkMode ? 'text-zinc-500' : 'text-slate-500'
-                                    }`}
-                            >
-                                {group.description}
-                            </p>
-
-                            <div className="mt-8 grid grid-cols-2 gap-2">
-                                {group.skills.map(({ name, icon: Icon, color }) => (
-                                    <div
-                                        key={name}
-                                        className={`flex items-center gap-3 rounded-xl border px-3 py-3 text-xs transition duration-300 hover:-translate-y-1 hover:border-fuchsia-400/50 ${darkMode
-                                            ? 'border-white/10 bg-black/20 text-zinc-300 hover:bg-white/10'
-                                            : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-fuchsia-50'
-                                            }`}
-                                    >
-                                        <span
-                                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${darkMode ? 'bg-white/[0.08]' : 'bg-white'
-                                                }`}
-                                        >
-                                            <Icon className={`text-lg ${color}`} />
-                                        </span>
-
-                                        <span>{name}</span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </article>
+  return (
+    <section id="skills" className="section-with-floats reveal-section relative scroll-mt-8 border-t border-white/[0.08] py-24 sm:py-28">
+      <FloatingDots />
+      <div className="mb-12 max-w-2xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-teal-200/75">TECHNICAL EXPERTISE</p>
+        <h2 className="mt-4 bg-gradient-to-r from-white via-zinc-100 to-cyan-100/85 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl">Built with modern technologies.</h2>
+        <p className="mt-5 max-w-xl text-base leading-7 text-zinc-400">A full-stack toolkit for building scalable applications, responsive interfaces, reliable backend systems, and production-ready solutions.</p>
+      </div>
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {skillGroups.map((group, index) => (
+          <ScrollReveal key={group.title} delayMs={index * 100}>
+          <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_40%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-black/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl hover:shadow-black/20">
+            <div aria-hidden="true" className={`pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r ${group.accent} opacity-50 transition-opacity duration-300 group-hover:opacity-90`} />
+            <div aria-hidden="true" className={`absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${group.accent} opacity-[0.07] blur-3xl transition duration-500 group-hover:opacity-[0.13]`} />
+            <div className="relative">
+              <div className="flex items-center justify-between"><span className="text-sm text-zinc-600">{group.number}</span><span className={`h-px w-16 bg-gradient-to-r ${group.accent}`} /></div>
+              <h3 className="mt-16 text-2xl font-semibold tracking-tight text-white">{group.title}</h3>
+              <p className="mt-3 min-h-14 text-sm leading-6 text-zinc-400">{group.description}</p>
+              <div className="mt-8 grid grid-cols-2 gap-2">
+                {group.skills.map(({ name, icon: Icon, color }) => (
+                  <div key={name} className="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-black/15 px-3 py-3 text-xs text-zinc-300 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-200/20 hover:bg-white/[0.055]">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.08]"><Icon className={`text-lg ${color}`} /></span>
+                    <span>{name}</span>
+                  </div>
                 ))}
+              </div>
             </div>
-        </section>
-    )
+          </article>
+          </ScrollReveal>
+        ))}
+      </div>
+    </section>
+  )
 }
 
 export default Skills

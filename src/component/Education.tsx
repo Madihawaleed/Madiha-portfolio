@@ -1,149 +1,50 @@
-import { FaGraduationCap, FaCode } from "react-icons/fa";
-import { RiGraduationCapLine, RiCodeBoxLine } from "react-icons/ri";
-import { useTheme } from "../App";
+import { FaGraduationCap, FaCode } from 'react-icons/fa'
+import { RiGraduationCapLine, RiCodeBoxLine } from 'react-icons/ri'
+import ScrollReveal from './ScrollReveal'
+import FloatingDots from './FloatingDots'
 
-const Education = () => {
-    const { darkMode } = useTheme();
+const technologyBadges = [
+  'Gen AI', 'React.js', 'Tailwind CSS', 'Next.js', 'Node.js', 'Express.js', 'TypeScript',
+  'CI/CD', 'MongoDB', 'PostgreSQL', 'Prisma ORM', 'AWS Cloud', 'Docker', 'Redis', 'Kafka',
+  'RabbitMQ', 'BullMQ', 'Git', 'Jira', 'Ant Design', 'Remix Icon', 'Font Awesome',
+]
 
-    return (
-        <section id="education" className="py-24 px-6">
-            <div className="max-w-6xl mx-auto">
+const Education = () => (
+  <section id="education" className="section-with-floats reveal-section scroll-mt-8 px-0 py-24 sm:py-28">
+    <FloatingDots />
+    <div className="mx-auto w-full max-w-[1400px]">
+      <div className="mb-16 text-center">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-teal-200/80">Education</p>
+        <h2 className="mt-3 text-4xl font-bold text-white md:text-5xl">Education &amp; Professional Development</h2>
+        <p className="mx-auto mt-5 max-w-2xl text-gray-400">My academic background and professional training in full-stack web development.</p>
+      </div>
+      <div className="grid gap-8 md:grid-cols-2">
+        <ScrollReveal animation="animate__fadeInLeft">
+        <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_42%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/20 sm:p-8">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-fuchsia-300/0 via-violet-300/60 to-cyan-300/0" />
+          <div className="flex items-center gap-5">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 transition group-hover:scale-110"><FaGraduationCap className="text-3xl text-cyan-400" /></div>
+            <div><p className="text-sm font-medium text-cyan-400">Bachelor&apos;s Degree</p><h3 className="mt-1 text-2xl font-semibold text-white">Bachelor of Arts</h3></div>
+          </div>
+          <div className="mt-7 flex items-center gap-2 text-gray-300"><RiGraduationCapLine className="text-lg text-cyan-400" />University of the Punjab</div>
+          <p className="mt-3 text-sm text-gray-500">2020</p>
+        </article>
+        </ScrollReveal>
+        <ScrollReveal animation="animate__fadeInRight" delayMs={100}>
+        <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_42%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/20 sm:p-8">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-fuchsia-300/0 via-violet-300/60 to-cyan-300/0" />
+          <div className="flex items-center gap-5">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 transition group-hover:scale-110"><FaCode className="text-3xl text-cyan-400" /></div>
+            <div><p className="text-sm font-medium text-cyan-400">Professional Training</p><h3 className="mt-1 text-2xl font-semibold text-white">Full Stack Web Development</h3></div>
+          </div>
+          <div className="mt-7 flex items-center gap-2 text-gray-300"><RiCodeBoxLine className="text-lg text-cyan-400" />CodingOTT</div>
+          <p className="mt-3 text-sm text-gray-500">Completed April 2026</p>
+          <div className="mt-5 flex flex-wrap gap-2">{technologyBadges.map((technology) => <span key={technology} className="rounded-full border border-cyan-400/10 bg-cyan-400/[0.08] px-3 py-1.5 text-xs text-zinc-300">{technology}</span>)}</div>
+        </article>
+        </ScrollReveal>
+      </div>
+    </div>
+  </section>
+)
 
-                {/* Heading */}
-                <div className="text-center mb-16">
-                    <p className="text-cyan-400 text-sm font-semibold uppercase tracking-[0.25em]">
-                        Education
-                    </p>
-
-                    <h2 className={`text-4xl md:text-5xl font-bold mt-3 ${darkMode ? "text-white" : "text-slate-900"
-                        }`}>
-                        Education & Professional Development
-                    </h2>
-
-                    <p className={`max-w-2xl mx-auto mt-5 ${darkMode ? "text-gray-400" : "text-slate-600"
-                        }`}>
-                        My academic background and professional training in full-stack
-                        web development.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8">
-
-                    {/* Bachelor's Degree */}
-                    <div className={`group p-8 rounded-2xl border hover:border-cyan-400/40 transition-all duration-300 ${darkMode
-                        ? "bg-white/[0.04] border-white/10"
-                        : "bg-white border-slate-200 shadow-sm"
-                        }`}>
-
-                        <div className="flex items-center gap-5">
-                            <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-cyan-400/10 border border-cyan-400/20 group-hover:scale-110 transition">
-                                <FaGraduationCap className="text-3xl text-cyan-400" />
-                            </div>
-
-                            <div>
-                                <p className="text-cyan-400 text-sm font-medium">
-                                    Bachelor’s Degree
-                                </p>
-
-                                <h3 className={`text-2xl font-semibold mt-1 ${darkMode ? "text-white" : "text-slate-900"
-                                    }`}>
-                                    Bachelor of Arts
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div className="mt-7">
-                            <div className={`flex items-center gap-2 ${darkMode ? "text-gray-300" : "text-slate-700"
-                                }`}>
-                                <RiGraduationCapLine className="text-cyan-400 text-lg" />
-                                <span>University of the Punjab</span>
-                            </div>
-
-                            <p className={`text-sm mt-3 ${darkMode ? "text-gray-500" : "text-slate-500"
-                                }`}>
-                                2020
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Full Stack Development */}
-                    <div className={`group p-8 rounded-2xl border hover:border-cyan-400/40 transition-all duration-300 ${darkMode
-                        ? "bg-white/[0.04] border-white/10"
-                        : "bg-white border-slate-200 shadow-sm"
-                        }`}>
-
-                        <div className="flex items-center gap-5">
-                            <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-cyan-400/10 border border-cyan-400/20 group-hover:scale-110 transition">
-                                <FaCode className="text-3xl text-cyan-400" />
-                            </div>
-
-                            <div>
-                                <p className="text-cyan-400 text-sm font-medium">
-                                    Professional Training
-                                </p>
-
-                                <h3 className={`text-2xl font-semibold mt-1 ${darkMode ? "text-white" : "text-slate-900"
-                                    }`}>
-                                    Full Stack Web Development
-                                </h3>
-                            </div>
-                        </div>
-
-                        <div className="mt-7">
-                            <div className={`flex items-center gap-2 ${darkMode ? "text-gray-300" : "text-slate-700"
-                                }`}>
-                                <RiCodeBoxLine className="text-cyan-400 text-lg" />
-                                <span>CodingOTT</span>
-                            </div>
-
-                            <p className={`text-sm mt-3 ${darkMode ? "text-gray-500" : "text-slate-500"
-                                }`}>
-                                Completed April 2026
-                            </p>
-
-                            <div className="flex flex-wrap gap-2 mt-5">
-                                {[
-                                    'Gen AI',
-                                    'React.js',
-                                    'Tailwind CSS',
-                                    "Next.js",
-                                    'Node.js',
-                                    'Express.js',
-                                    'TypeScript',
-                                    "CI/CD",
-                                    'MongoDB',
-                                    "Postgresql",
-                                    "ORM Prisma",
-                                    'AWS Cloud',
-                                    'Docker',
-                                    'Redis',
-                                    'Kafka',
-                                    'RabitMq',
-                                    'BullMq',
-                                    'Git',
-                                    'Jira',
-                                    'Ant Design',
-                                    'Remix Icon',
-                                    'Font Awesome',
-
-
-
-                                ].map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3 py-1.5 rounded-full text-xs text-cyan-400 bg-cyan-100/10 border border-cyan-400/10"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default Education;
+export default Education

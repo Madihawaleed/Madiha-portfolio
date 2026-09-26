@@ -3,8 +3,8 @@
 
 :root {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  color: #f8fafc;
-  background: #09090b;
+  color: #f4f4f5;
+  background: #090a0e;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13,9 +13,214 @@
 body {
   margin: 0;
   min-width: 320px;
-  background: #09090b;
+  background: #090a0e;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+::selection {
+  color: #e5f7f5;
+  background: rgb(45 120 116 / 45%);
+}
+
+:focus-visible {
+  outline: 2px solid rgb(153 220 213 / 75%);
+  outline-offset: 3px;
 }
 
 #root {
   min-height: 100vh;
+}
+
+.availability-pulse {
+  animation: availability-pulse 2.4s ease-in-out infinite;
+}
+
+.hero-skill-chip {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#101116, #101116) padding-box,
+    linear-gradient(115deg, rgb(217 70 239 / 16%), rgb(139 92 246 / 14%), rgb(34 211 238 / 16%)) border-box;
+  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
+}
+
+.hero-skill-chip:hover {
+  transform: translateY(-2px) scale(1.025);
+  background:
+    linear-gradient(#14141a, #14141a) padding-box,
+    linear-gradient(115deg, rgb(217 70 239 / 36%), rgb(139 92 246 / 34%), rgb(34 211 238 / 36%)) border-box;
+  box-shadow: 0 5px 16px rgb(139 92 246 / 11%);
+}
+
+.hero-float-field {
+  contain: layout paint;
+}
+
+.section-with-floats {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-with-floats > .section-float-field {
+  opacity: 0.58;
+}
+
+.section-with-floats > :not(.section-float-field) {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-float-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--dot-color);
+  opacity: 0.38;
+  animation-duration: var(--dot-duration, 8s);
+  animation-delay: var(--dot-delay, 0s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.hero-float-horizontal { animation-name: hero-float-horizontal; }
+.hero-float-vertical { animation-name: hero-float-vertical; }
+.hero-float-diagonal { animation-name: hero-float-diagonal; }
+.hero-float-orbit { animation-name: hero-float-orbit; }
+
+.hero-float-dot--fuchsia {
+  --dot-color: rgb(232 121 249 / 62%);
+  --dot-glow: rgb(217 70 239 / 24%);
+}
+
+.hero-float-dot--violet {
+  --dot-color: rgb(196 181 253 / 62%);
+  --dot-glow: rgb(139 92 246 / 22%);
+}
+
+.hero-float-dot--cyan {
+  --dot-color: rgb(165 243 252 / 60%);
+  --dot-glow: rgb(34 211 238 / 22%);
+}
+
+.hero-float-dot--glow {
+  box-shadow: 0 0 8px 1px var(--dot-glow);
+}
+
+.hero-float-dot--1  { top: 12%; left: 8%;  --dot-duration: 6s;  --dot-delay: -1s; }
+.hero-float-dot--2  { top: 21%; left: 27%; --dot-duration: 8s;  --dot-delay: -3s; }
+.hero-float-dot--3  { top: 10%; left: 49%; --dot-duration: 10s; --dot-delay: -6s; }
+.hero-float-dot--4  { top: 25%; left: 73%; --dot-duration: 12s; --dot-delay: -2s; }
+.hero-float-dot--5  { top: 16%; left: 91%; --dot-duration: 8s;  --dot-delay: -4s; }
+.hero-float-dot--6  { top: 44%; left: 14%; --dot-duration: 10s; --dot-delay: -7s; }
+.hero-float-dot--7  { top: 52%; left: 37%; --dot-duration: 12s; --dot-delay: -5s; }
+.hero-float-dot--8  { top: 43%; left: 65%; --dot-duration: 6s;  --dot-delay: -2.5s; }
+.hero-float-dot--9  { top: 58%; left: 87%; --dot-duration: 10s; --dot-delay: -9s; }
+.hero-float-dot--10 { top: 76%; left: 22%; --dot-duration: 12s; --dot-delay: -4s; }
+.hero-float-dot--11 { top: 83%; left: 48%; --dot-duration: 8s;  --dot-delay: -3s; }
+.hero-float-dot--12 { top: 74%; left: 71%; --dot-duration: 10s; --dot-delay: -6s; }
+.hero-float-dot--13 { top: 89%; left: 91%; --dot-duration: 12s; --dot-delay: -8s; }
+.hero-float-dot--14 { top: 34%; left: 4%;  --dot-duration: 6s;  --dot-delay: -5s; }
+.hero-float-dot--15 { top: 66%; left: 56%; --dot-duration: 8s;  --dot-delay: -1.5s; }
+
+@keyframes hero-float-horizontal {
+  0%, 100% { transform: translate3d(-30px, 0, 0) scale(0.96); }
+  50% { transform: translate3d(30px, 0, 0) scale(1.05); }
+}
+
+@keyframes hero-float-vertical {
+  0%, 100% { transform: translate3d(0, -27px, 0) scale(0.96); }
+  50% { transform: translate3d(0, 27px, 0) scale(1.05); }
+}
+
+@keyframes hero-float-diagonal {
+  0%, 100% { transform: translate3d(-24px, -20px, 0) scale(0.95); }
+  50% { transform: translate3d(24px, 20px, 0) scale(1.06); }
+}
+
+@keyframes hero-float-orbit {
+  0%, 100% { transform: translate3d(-24px, 0, 0) scale(0.96); }
+  25% { transform: translate3d(0, -20px, 0) scale(1.02); }
+  50% { transform: translate3d(24px, 0, 0) scale(1.06); }
+  75% { transform: translate3d(0, 20px, 0) scale(1.02); }
+}
+
+@keyframes hero-float-horizontal-reduced {
+  0%, 100% { transform: translate3d(-4px, 0, 0) scale(1); }
+  50% { transform: translate3d(4px, 0, 0) scale(1); }
+}
+
+@keyframes hero-float-vertical-reduced {
+  0%, 100% { transform: translate3d(0, -4px, 0) scale(1); }
+  50% { transform: translate3d(0, 4px, 0) scale(1); }
+}
+
+@keyframes hero-float-diagonal-reduced {
+  0%, 100% { transform: translate3d(-3px, -3px, 0) scale(1); }
+  50% { transform: translate3d(3px, 3px, 0) scale(1); }
+}
+
+@keyframes hero-float-orbit-reduced {
+  0%, 100% { transform: translate3d(-3px, 0, 0) scale(1); }
+  25% { transform: translate3d(0, -3px, 0) scale(1); }
+  50% { transform: translate3d(3px, 0, 0) scale(1); }
+  75% { transform: translate3d(0, 3px, 0) scale(1); }
+}
+
+@keyframes availability-pulse {
+  0%,
+  100% {
+    opacity: 0.72;
+    box-shadow: 0 0 4px rgb(52 211 153 / 25%);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 9px rgb(52 211 153 / 45%);
+  }
+}
+
+.scroll-reveal {
+  visibility: hidden;
+  opacity: 0;
+  --animate-duration: 750ms;
+}
+
+.scroll-reveal.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .availability-pulse {
+    animation: none;
+  }
+
+  .hero-skill-chip,
+  .hero-skill-chip:hover {
+    transform: none;
+    transition: none;
+  }
+
+  .hero-float-dot {
+    opacity: 0.24;
+    animation-duration: 24s !important;
+    will-change: auto;
+  }
+
+  .hero-float-horizontal { animation-name: hero-float-horizontal-reduced; }
+  .hero-float-vertical { animation-name: hero-float-vertical-reduced; }
+  .hero-float-diagonal { animation-name: hero-float-diagonal-reduced; }
+  .hero-float-orbit { animation-name: hero-float-orbit-reduced; }
+
+  .scroll-reveal {
+    opacity: 1;
+  }
 }

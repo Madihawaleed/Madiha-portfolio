@@ -1,446 +1,114 @@
-
-import { createContext, useContext, useState } from 'react'
-import {
-  FaArrowRight,
-  FaGithub,
-  FaLinkedinIn,
-  FaDownload,
-  FaMoon,
-  FaSun,
-} from 'react-icons/fa'
-
+import { FaArrowRight, FaWhatsapp } from 'react-icons/fa'
 import Skills from './component/Skills'
 import Projects from './component/Project'
 import Education from './component/Education'
 import WhyHireMe from './component/WhyHireme'
 import Contact from './component/Contact'
+import ScrollReveal from './component/ScrollReveal'
+import FloatingDots from './component/FloatingDots'
 
-type ThemeContextType = {
-  darkMode: boolean
-  toggleTheme: () => void
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext)
-
-  if (!context) {
-    throw new Error('useTheme must be used inside ThemeContext')
-  }
-
-  return context
-}
-
-const skills = [
-  'Gen AI',
-  'React.js',
-  'Tailwind CSS',
-  'Next.js',
-  'Node.js',
-  'Express.js',
-  'TypeScript',
-  'CI/CD',
-  'MongoDB',
-  'PostgreSQL',
-  'Prisma ORM',
-  'AWS Cloud',
-  'Docker',
-  'Redis',
-  'Kafka',
-  'RabbitMQ',
-  'BullMQ',
-  'Git',
-  'Jira',
-  'Ant Design',
-  'Remix Icon',
-  'Font Awesome',
+const heroSkills = [
+  'Gen AI', 'React.js', 'Tailwind CSS', 'Next.js', 'Node.js', 'Express.js', 'TypeScript',
+  'CI/CD', 'MongoDB', 'PostgreSQL', 'Prisma ORM', 'AWS Cloud', 'Docker', 'Redis', 'Kafka',
+  'RabbitMQ', 'BullMQ', 'Git', 'Jira', 'Ant Design', 'Remix Icon', 'Font Awesome',
 ]
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true)
-
-  const toggleTheme = () => {
-    setDarkMode((prev) => !prev)
-  }
-
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
-      <main
-        className={`min-h-screen overflow-hidden transition-colors duration-500 ${darkMode
-          ? 'bg-[#06060a] text-white'
-          : 'bg-[#fafaff] text-slate-900'
-          }`}
-      >
-        {/* Background */}
-        <div className="pointer-events-none fixed inset-0 -z-10">
-          {darkMode ? (
-            <>
-              <div className="absolute left-[-15rem] top-[-12rem] h-[35rem] w-[35rem] rounded-full bg-fuchsia-600/20 blur-[120px]" />
+    <main className="min-h-screen overflow-hidden bg-[#090a0e] text-zinc-100">
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute left-[-15rem] top-[-12rem] h-[35rem] w-[35rem] rounded-full bg-fuchsia-700/10 blur-[140px]" />
+        <div className="absolute right-[-15rem] top-[10rem] h-[35rem] w-[35rem] rounded-full bg-cyan-700/[0.08] blur-[150px]" />
+        <div className="absolute bottom-[-15rem] left-[35%] h-[30rem] w-[30rem] rounded-full bg-violet-700/[0.07] blur-[140px]" />
+        <div className="absolute inset-0 opacity-[0.012] [background-image:linear-gradient(rgba(255,255,255,.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.5)_1px,transparent_1px)] [background-size:70px_70px]" />
+      </div>
 
-              <div className="absolute right-[-15rem] top-[10rem] h-[35rem] w-[35rem] rounded-full bg-cyan-500/15 blur-[130px]" />
+      <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-6 lg:px-8">
+        <nav className="animate__animated animate__fadeInDown sticky top-0 z-30 -mx-5 flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] bg-[#090a0e]/85 px-5 py-4 backdrop-blur-xl transition-colors duration-300 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8" aria-label="Main navigation">
+          <a href="#home" className="animate__animated animate__bounceIn bg-gradient-to-r from-fuchsia-200 via-violet-200 to-cyan-200 bg-clip-text text-xl font-bold tracking-tight text-transparent">Hi! Madiha.</a>
+          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-400 sm:gap-7">
+            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#work">Work</a>
+            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#skills">Skills</a>
+            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#why-hire-me">Why Hire Me</a>
+            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#contact">Contact</a>
+          </div>
+          <a href="#contact" className="rounded-full border border-white/15 bg-gradient-to-r from-fuchsia-300 via-violet-300 to-cyan-300 px-5 py-2.5 text-sm font-semibold text-[#101116] shadow-md shadow-violet-950/20 transition duration-300 hover:-translate-y-0.5 hover:from-fuchsia-200 hover:via-violet-200 hover:to-cyan-200 hover:shadow-violet-900/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090a0e]">Let&apos;s Talk</a>
+        </nav>
 
-              <div className="absolute bottom-[-15rem] left-[35%] h-[30rem] w-[30rem] rounded-full bg-violet-600/10 blur-[120px]" />
-
-              <div className="absolute inset-0 opacity-[0.025] [background-image:linear-gradient(rgba(255,255,255,.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.5)_1px,transparent_1px)] [background-size:70px_70px]" />
-            </>
-          ) : (
-            <>
-              <div className="absolute left-[-15rem] top-[-12rem] h-[35rem] w-[35rem] rounded-full bg-fuchsia-300/30 blur-[120px]" />
-
-              <div className="absolute right-[-15rem] top-[10rem] h-[35rem] w-[35rem] rounded-full bg-cyan-300/25 blur-[130px]" />
-
-              <div className="absolute bottom-[-15rem] left-[35%] h-[30rem] w-[30rem] rounded-full bg-violet-300/20 blur-[120px]" />
-
-              <div className="absolute inset-0 opacity-[0.04] [background-image:linear-gradient(rgba(99,102,241,.5)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,.5)_1px,transparent_1px)] [background-size:70px_70px]" />
-            </>
-          )}
-        </div>
-
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
-
-          {/* Navbar */}
-          <nav
-            className={`flex items-center justify-between border-b py-5 sm:py-7 ${darkMode
-              ? 'border-white/10'
-              : 'border-slate-200'
-              }`}
-          >
-            <a
-              href="/"
-              className="text-lg font-bold tracking-tight sm:text-xl"
-            >
-              Hi! Madiha<span className="text-fuchsia-400">.</span>
-            </a>
-
-            {/* Desktop Navigation */}
-            <div
-              className={`hidden items-center gap-8 text-sm md:flex ${darkMode
-                ? 'text-zinc-400'
-                : 'text-slate-500'
-                }`}
-            >
-              <a
-                href="#home"
-                className="transition hover:text-fuchsia-400"
-              >
-                Home
-              </a>
-
-              <a
-                href="#about"
-                className="transition hover:text-fuchsia-400"
-              >
-                About
-              </a>
-
-              <a
-                href="#skills"
-                className="transition hover:text-fuchsia-400"
-              >
-                Skills
-              </a>
-
-              <a
-                href="#work"
-                className="transition hover:text-fuchsia-400"
-              >
-                Work
-              </a>
-
-              <a
-                href="#why-hire-me"
-                className="transition hover:text-fuchsia-400"
-              >
-                Hire Me
-              </a>
+        <section id="home" className="reveal-section relative isolate grid min-h-[calc(100vh-80px)] items-center gap-12 py-16 sm:gap-16 sm:py-20 lg:grid-cols-[1.1fr_.9fr]">
+          <div aria-hidden="true" className="hero-float-field pointer-events-none absolute inset-0 z-0 overflow-hidden">
+            <span className="hero-float-dot hero-float-dot--1 hero-float-horizontal hero-float-dot--fuchsia hero-float-dot--glow" />
+            <span className="hero-float-dot hero-float-dot--2 hero-float-vertical hero-float-dot--violet" />
+            <span className="hero-float-dot hero-float-dot--3 hero-float-diagonal hero-float-dot--cyan hero-float-dot--glow" />
+            <span className="hero-float-dot hero-float-dot--4 hero-float-orbit hero-float-dot--fuchsia" />
+            <span className="hero-float-dot hero-float-dot--5 hero-float-horizontal hero-float-dot--violet hero-float-dot--glow" />
+            <span className="hero-float-dot hero-float-dot--6 hero-float-vertical hero-float-dot--cyan" />
+            <span className="hero-float-dot hero-float-dot--7 hero-float-diagonal hero-float-dot--fuchsia hero-float-dot--glow" />
+            <span className="hero-float-dot hero-float-dot--8 hero-float-orbit hero-float-dot--violet" />
+            <span className="hero-float-dot hero-float-dot--9 hero-float-horizontal hero-float-dot--cyan hero-float-dot--glow" />
+            <span className="hero-float-dot hero-float-dot--10 hero-float-vertical hero-float-dot--fuchsia" />
+            <span className="hero-float-dot hero-float-dot--11 hero-float-diagonal hero-float-dot--violet hero-float-dot--glow" />
+            <span className="hero-float-dot hero-float-dot--12 hero-float-orbit hero-float-dot--cyan" />
+            <span className="hero-float-dot hero-float-dot--13 hero-float-horizontal hero-float-dot--fuchsia hero-float-dot--glow" />
+            <span className="hero-float-dot hero-float-dot--14 hero-float-vertical hero-float-dot--violet" />
+            <span className="hero-float-dot hero-float-dot--15 hero-float-orbit hero-float-dot--cyan hero-float-dot--glow" />
+          </div>
+          <div className="animate__animated animate__fadeInLeft relative z-10">
+            <div className="mb-5 flex items-center gap-2">
+              <span className="availability-pulse h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.4)]" />
+              <span className="text-sm font-medium text-emerald-200/90">Open to New Opportunities</span>
             </div>
-
-            {/* Right Side */}
-            <div className="flex items-center gap-2 sm:gap-3">
-
-              {/* Theme */}
-              <button
-                type="button"
-                onClick={toggleTheme}
-                aria-label="Toggle theme"
-                className={`flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-300 sm:h-10 sm:w-10 ${darkMode
-                  ? 'border-white/10 bg-white/[0.04] text-yellow-300 hover:border-yellow-300/40 hover:bg-yellow-300/10'
-                  : 'border-slate-200 bg-white text-slate-700 shadow-sm hover:border-violet-400 hover:bg-violet-50'
-                  }`}
-              >
-                {darkMode ? <FaSun /> : <FaMoon />}
-              </button>
-
-              {/* Contact */}
-              <a
-                href="#contact"
-                className={`rounded-full border px-3.5 py-2 text-xs font-medium transition sm:px-5 sm:py-2.5 sm:text-sm ${darkMode
-                  ? 'border-white/15 hover:border-fuchsia-400 hover:bg-fuchsia-400/10'
-                  : 'border-slate-300 bg-white hover:border-violet-400 hover:bg-violet-50'
-                  }`}
-              >
-                Let's talk
-              </a>
-            </div>
-          </nav>
-
-          {/* Hero */}
-          <section
-            id="home"
-            className="grid min-h-[calc(100vh-80px)] items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.1fr_.9fr] lg:gap-16"
-          >
-
-            {/* Left */}
-            <div className="relative z-10">
-
-              {/* Availability */}
-              <div className="mb-4 flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)] animate-pulse" />
-
-                <span className="text-sm font-medium text-emerald-300">
-                  Open to New Opportunities
-                </span>
-              </div>
-
-              <p
-                className={`mb-5 text-sm font-medium ${darkMode
-                  ? 'text-slate-400'
-                  : 'text-slate-500'
-                  }`}
-              >
+            <h1 className="mb-8">
+              <span className="animate__animated animate__heartBeat animate__infinite bg-gradient-to-r from-white via-fuchsia-200 to-cyan-200 bg-clip-text text-5xl font-bold leading-tight tracking-[-0.045em] text-transparent">
                 Full Stack Developer
-              </p>
+              </span>
 
-              <h1 className="max-w-4xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-6xl lg:text-[5rem]">
-                I build modern
-
-                <span className="block bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 bg-clip-text text-transparent">
-                  web applications.
+              <span className="mt-3 block h-[2px] w-24 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 opacity-80" />
+            </h1>
+            <div className="mb-4 mt-1 flex items-center gap-3">
+              <span aria-hidden="true" className="h-px w-7 bg-gradient-to-r from-fuchsia-400/70 to-violet-400/70" />
+              <h2 className="bg-gradient-to-r from-fuchsia-200 via-violet-200 to-cyan-200 bg-clip-text text-sm font-semibold tracking-[0.12em] text-transparent transition duration-300 hover:tracking-[0.16em]">My Skills</h2>
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-violet-300 to-cyan-300 shadow-[0_0_8px_rgba(139,92,246,0.25)]" />
+            </div>
+            <div className="flex max-w-3xl flex-wrap gap-2" aria-label="Technical skills">
+              {heroSkills.map((skill) => (
+                <span key={skill} className="hero-skill-chip rounded-full px-3 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm">
+                  <span className="bg-gradient-to-r from-fuchsia-200 via-violet-200 to-cyan-200 bg-clip-text text-transparent">{skill}</span>
                 </span>
-              </h1>
-
-              <p
-                className={`mt-6 max-w-2xl text-sm leading-6 sm:mt-7 sm:text-lg sm:leading-7 ${darkMode
-                  ? 'text-zinc-400'
-                  : 'text-slate-500'
-                  }`}
-              >
-                Full Stack Developer focused on building responsive
-                interfaces, scalable backend systems, and reliable digital
-                products using modern JavaScript technologies.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:gap-4">
-
-                <a
-                  href="#work"
-                  className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-semibold transition hover:scale-105 ${darkMode
-                    ? 'bg-white text-zinc-950'
-                    : 'bg-slate-900 text-white'
-                    }`}
-                >
-                  View my work
-                  <FaArrowRight className="text-xs" />
-                </a>
-
-                <a
-                  href="/resume.pdf"
-                  download
-                  className={`inline-flex items-center justify-center gap-3 rounded-full border px-6 py-3 text-sm font-semibold transition ${darkMode
-                    ? 'border-white/15 text-zinc-300 hover:border-white/40 hover:text-white'
-                    : 'border-slate-300 bg-white text-slate-700 hover:border-violet-400 hover:text-violet-600'
-                    }`}
-                >
-                  Resume
-                  <FaDownload className="text-xs" />
-                </a>
-              </div>
-
-              {/* Social */}
-              <div className="mt-8 flex items-center gap-4">
-
-
-
-
-
-              </div>
-
-              {/* Technologies */}
-              <div className="mt-10 max-w-2xl sm:mt-12">
-
-                <p
-                  className={`mb-4 text-[10px] font-semibold uppercase tracking-[0.3em] ${darkMode
-                    ? 'text-zinc-500'
-                    : 'text-slate-400'
-                    }`}
-                >
-                  Technologies I work with
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-
-                  {skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className={`rounded-full border px-3 py-1.5 text-xs transition ${darkMode
-                        ? 'border-white/10 bg-white/[0.035] text-zinc-400 hover:border-fuchsia-400/40 hover:bg-fuchsia-400/10 hover:text-fuchsia-200'
-                        : 'border-slate-200 bg-white text-slate-500 hover:border-violet-300 hover:bg-violet-50 hover:text-violet-600'
-                        }`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-
-                </div>
-              </div>
+              ))}
             </div>
+            <a href="#why-hire-me" className="group mt-7 inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full border border-white/10 bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 px-5 py-2.5 text-sm font-semibold text-[#101116] shadow-[0_6px_20px_rgba(139,92,246,0.16)] transition duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-[0_8px_24px_rgba(139,92,246,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090a0e]">
+              Hire Me <FaArrowRight aria-hidden="true" className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
+            </a>
+          </div>
 
-            {/* Right Image */}
-            <div className="relative mx-auto mt-2 w-full max-w-[320px] sm:max-w-md lg:mt-0">
-
-              {/* Glow */}
-              <div className="absolute -inset-5 rounded-full bg-gradient-to-br from-fuchsia-500/20 via-violet-500/10 to-cyan-500/20 blur-3xl sm:-inset-8" />
-
-              {/* Animated Dots */}
-              <span className="absolute -left-1 top-1/4 h-2 w-2 rounded-full bg-fuchsia-400 shadow-[0_0_12px_4px_rgba(232,121,249,0.6)] animate-pulse" />
-
-              <span className="absolute -right-1 top-1/2 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_12px_4px_rgba(34,211,238,0.6)] animate-pulse [animation-delay:500ms]" />
-
-              <span className="absolute bottom-1/4 -left-1 h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_12px_4px_rgba(167,139,250,0.6)] animate-pulse [animation-delay:1000ms]" />
-
-              <span className="absolute -right-1 bottom-1/4 h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_4px_rgba(52,211,153,0.6)] animate-pulse [animation-delay:1500ms]" />
-
-              {/* Card */}
-              <div
-                className={`relative rounded-[1.5rem] border p-2.5 shadow-2xl backdrop-blur-xl sm:rounded-[2rem] sm:p-3 ${darkMode
-                  ? 'border-white/10 bg-white/[0.04]'
-                  : 'border-white bg-white/70 shadow-violet-200/50'
-                  }`}
-              >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem]">
-
-                  <img
-                    src="/sample-image.jpeg"
-                    alt="Full Stack Developer"
-                    className="h-full w-full object-cover"
-                  />
-
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t ${darkMode
-                      ? 'from-[#06060a]'
-                      : 'from-slate-900/80'
-                      } via-transparent to-transparent`}
-                  />
-
-                  {/* Image Labels */}
-                  <div className="absolute left-3 right-3 top-3 flex items-center justify-between gap-2 sm:left-6 sm:right-6 sm:top-6">
-
-                    <span className="rounded-full border border-white/15 bg-black/40 px-2.5 py-1.5 text-[8px] font-medium uppercase tracking-[0.1em] text-white/80 backdrop-blur-md sm:px-3 sm:text-[10px] sm:tracking-[0.18em]">
-                      Full Stack Developer
-                    </span>
-
-                    <span className="flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2.5 py-1.5 text-[8px] font-medium uppercase tracking-[0.08em] text-emerald-300 sm:gap-2 sm:px-3 sm:text-[10px] sm:tracking-[0.15em]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)] animate-pulse" />
-                      Available
-                    </span>
-
-                  </div>
-                </div>
-              </div>
+          <div className="animate__animated animate__fadeInRight relative z-10 mx-auto w-full max-w-xs ">
+            <img src="/profile.jpeg" alt="Madiha's professional profile" decoding="async" fetchPriority="high" className="block h-auto w-full rounded-lg object-contain shadow-lg shadow-gray-500/20" />
+            <div aria-label="Available to Join" className="animate__animated animate__fadeInDown animate__delay-1s pointer-events-none absolute left-[4%] top-[9%] z-20 flex items-center gap-2">
+              <span className="availability-pulse h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.4)]" />
+              <span className="bg-gradient-to-r from-emerald-200 via-green-300 to-lime-200 bg-clip-text text-xs font-semibold tracking-wide text-transparent drop-shadow-[0_0_8px_rgba(74,222,128,0.2)] sm:text-sm">Available to Join</span>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Skills */}
-          <section id="skills" className="scroll-mt-20">
-            <Skills />
-          </section>
+        <ScrollReveal><Projects /></ScrollReveal>
+        <ScrollReveal><Skills /></ScrollReveal>
+        <ScrollReveal><Education /></ScrollReveal>
+        <ScrollReveal><WhyHireMe /></ScrollReveal>
+        <ScrollReveal><Contact /></ScrollReveal>
 
-          {/* Projects */}
-          <section id="work" className="scroll-mt-20">
-            <Projects />
-          </section>
+        <ScrollReveal><section className="section-with-floats reveal-section my-16 rounded-3xl border border-white/[0.09] bg-gradient-to-br from-teal-300/[0.06] via-violet-300/[0.05] to-rose-300/[0.05] px-6 py-12 text-center shadow-xl shadow-black/10 sm:px-12">
+          <FloatingDots />
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-teal-200">Have a project in mind?</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">Let&apos;s build something useful.</h2>
+          <a href="#contact" className="mt-7 inline-flex items-center gap-3 rounded-full border border-teal-200/25 bg-gradient-to-r from-teal-200 to-cyan-200 px-6 py-3 text-sm font-semibold text-zinc-950 transition duration-300 hover:-translate-y-0.5 hover:from-teal-100 hover:to-cyan-100">Get in touch <FaArrowRight className="text-xs" /></a>
+        </section></ScrollReveal>
+        <ScrollReveal><footer className="border-t border-white/10 py-8 text-center text-sm text-zinc-500">&copy; {new Date().getFullYear()} Madiha. Thanks for visiting.</footer></ScrollReveal>
+      </div>
 
-          {/* About */}
-          <section id="about" className="scroll-mt-20">
-            <Education />
-            <WhyHireMe />
-          </section>
-
-          {/* Contact */}
-          <section id="contact" className="scroll-mt-20">
-            <Contact />
-          </section>
-
-          {/* Final CTA */}
-          <section className="py-16 sm:py-24">
-            <div
-              className={`relative overflow-hidden rounded-3xl border px-6 py-10 text-center sm:px-10 sm:py-14 ${darkMode
-                ? 'border-white/10 bg-white/[0.03]'
-                : 'border-slate-200 bg-white/70'
-                }`}
-            >
-
-              {/* CTA Glow */}
-              <div className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-fuchsia-500/20 blur-3xl" />
-
-              <div className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-cyan-500/20 blur-3xl" />
-
-              <div className="relative">
-
-                <div className="mb-3 flex items-center justify-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)] animate-pulse" />
-
-                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-400">
-                    Open to New Opportunities
-                  </p>
-                </div>
-
-                <h2 className="text-2xl font-semibold tracking-tight sm:text-4xl">
-                  Let's build something together.
-                </h2>
-
-                <p
-                  className={`mx-auto mt-3 max-w-xl text-sm leading-6 sm:text-base ${darkMode
-                    ? 'text-zinc-400'
-                    : 'text-slate-500'
-                    }`}
-                >
-                  Have a project, opportunity, or role in mind?
-                  Let's connect.
-                </p>
-
-                <a
-                  href="#contact"
-                  className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition hover:scale-105 sm:w-auto ${darkMode
-                    ? 'bg-white text-zinc-950'
-                    : 'bg-slate-900 text-white'
-                    }`}
-                >
-                  Let's Connect
-                  <FaArrowRight className="text-xs" />
-                </a>
-
-              </div>
-            </div>
-          </section>
-
-          {/* Footer */}
-          <footer
-            className={`border-t py-8 text-center text-xs ${darkMode
-              ? 'border-white/10 text-zinc-500'
-              : 'border-slate-200 text-slate-400'
-              }`}
-          >
-            <p>
-              © {new Date().getFullYear()} Madiha. Built with React & Tailwind CSS.
-            </p>
-          </footer>
-
-        </div>
-      </main>
-    </ThemeContext.Provider>
+      <a href="https://wa.me/14695409948" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-3xl text-white shadow-lg shadow-green-900/30 transition hover:scale-105 hover:bg-[#20bd5a]"><FaWhatsapp /></a>
+      <a href="#why-hire-me" className="fixed bottom-6 right-24 z-40 rounded-full border border-white/15 bg-zinc-900/95 px-4 py-3 text-xs font-semibold tracking-wide text-zinc-100 shadow-lg shadow-black/30 backdrop-blur transition hover:border-cyan-400/40 hover:bg-zinc-800 sm:px-5 sm:text-sm">Hire Me</a>
+    </main>
   )
 }
 
