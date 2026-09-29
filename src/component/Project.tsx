@@ -3,11 +3,11 @@ import ScrollReveal from './ScrollReveal'
 import FloatingDots from './FloatingDots'
 
 const projects = [
-  { title: 'E-commerce Platform', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80', description: 'Modern e-commerce platform with authentication, products, cart and checkout.', tech: ['Next.js', 'React', 'TypeScript', 'MongoDB', 'Stripe', 'AWS', 'Git'] },
-  { title: 'Video Streaming Platform', image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80', description: 'Video streaming platform with a modern interface for browsing and watching content.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Git', 'AWS'] },
-  { title: 'File Sharing Platform', image: 'https://images.unsplash.com/photo-1618044733300-9472054094ee?auto=format&fit=crop&w=900&q=80', description: 'File sharing application for uploading, managing and sharing files.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB'] },
-  { title: 'File Hosting Platform', image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80', description: 'Cloud-based file hosting platform using AWS S3 for file storage.', tech: ['React', 'Node.js', 'Express.js', 'AWS S3'] },
-  { title: 'CLI Applications', image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80', description: 'Command-line applications built to perform development and utility tasks.', tech: ['Node.js', 'TypeScript', 'CLI'] },
+  { title: 'E-commerce Platform', image: '/ecommerce-preview.svg', description: 'Modern e-commerce platform with authentication, products, cart and checkout.', tech: ['Next.js', 'React', 'TypeScript', 'MongoDB', 'Stripe', 'AWS', 'Git'] },
+  { title: 'Video Streaming Platform', image: '/video-chat-preview.svg', description: 'Real-time communication platform for video and audio calls, with live messaging and collaboration.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Git', 'AWS'] },
+  { title: 'File Sharing Platform', image: '/file-sharing-preview.svg', description: 'Securely upload, organize, and share files with access-controlled links and a clear file workspace.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB'] },
+  { title: 'File Hosting Platform', image: '/file-hosting-preview.svg', description: 'Cloud-based file hosting dashboard for managing storage, transfers, and AWS S3 assets.', tech: ['React', 'Node.js', 'Express.js', 'AWS S3'] },
+  { title: 'CLI Applications', image: '/cli-tools-preview.svg', description: 'Developer-focused command-line tools for automating builds, checks, and deployment workflows.', tech: ['Node.js', 'TypeScript', 'CLI'] },
 ]
 
 const Projects = () => (

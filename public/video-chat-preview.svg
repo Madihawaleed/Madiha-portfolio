@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="75" y1="20" x2="1112" y2="665" gradientUnits="userSpaceOnUse"><stop stop-color="#17152B"/><stop offset=".56" stop-color="#10131C"/><stop offset="1" stop-color="#102326"/></linearGradient>
+    <linearGradient id="call" x1="100" y1="170" x2="790" y2="550" gradientUnits="userSpaceOnUse"><stop stop-color="#37305A"/><stop offset="1" stop-color="#1D3842"/></linearGradient>
+    <linearGradient id="avatar1" x1="480" y1="224" x2="689" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#FBCFE8"/><stop offset="1" stop-color="#C4B5FD"/></linearGradient>
+    <linearGradient id="avatar2" x1="178" y1="280" x2="342" y2="508" gradientUnits="userSpaceOnUse"><stop stop-color="#A5F3FC"/><stop offset="1" stop-color="#818CF8"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="781" cy="178" r="186" fill="#8B5CF6" fill-opacity=".12"/>
+  <rect x="55" y="38" width="1090" height="599" rx="24" fill="#11141D" stroke="#FFFFFF" stroke-opacity=".1"/>
+  <path d="M79 38h1042a24 24 0 0 1 24 24v52H55V62a24 24 0 0 1 24-24Z" fill="#171A25"/>
+  <circle cx="84" cy="73" r="6" fill="#FB7185"/><circle cx="106" cy="73" r="6" fill="#FBBF24"/><circle cx="128" cy="73" r="6" fill="#34D399"/>
+  <rect x="433" y="59" width="335" height="28" rx="14" fill="#242735"/><text x="550" y="78" fill="#A1A1AA" font-family="Arial,sans-serif" font-size="12">connectly.app / meeting</text>
+  <rect x="55" y="114" width="70" height="523" rx="0" fill="#171A25"/>
+  <rect x="73" y="139" width="34" height="34" rx="11" fill="#8B5CF6"/><path d="M82 148h16v16H82z" stroke="#fff" stroke-width="2"/><path d="m87 148 3 5 3-5m-6 16 3-5 3 5" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="90" cy="204" r="17" fill="#262A38"/><path d="M84 204a6 6 0 0 1 12 0v5a6 6 0 0 1-12 0v-5Zm-4 2v3a10 10 0 0 0 20 0v-3m-10 13v5m-6 0h12" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="90" cy="258" r="17" fill="#262A38"/><path d="M83 252h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-6l-5 4v-4h-3a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z" stroke="#A1A1AA" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="146" y="132" width="704" height="428" rx="20" fill="url(#call)" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="172" y="166" fill="#F4F4F5" font-family="Arial,sans-serif" font-size="15" font-weight="700">Design sync</text><circle cx="277" cy="161" r="4" fill="#34D399"/><text x="289" y="166" fill="#A1A1AA" font-family="Arial,sans-serif" font-size="11">04 participants</text>
+  <rect x="703" y="145" width="122" height="30" rx="15" fill="#11141D" fill-opacity=".55"/><circle cx="721" cy="160" r="4" fill="#FB7185"/><text x="733" y="164" fill="#E4E4E7" font-family="Arial,sans-serif" font-size="11">00:24:18</text>
+  <circle cx="541" cy="342" r="117" fill="#A78BFA" fill-opacity=".12"/><circle cx="541" cy="305" r="64" fill="url(#avatar1)"/>
+  <path d="M500 300c0-27 18-48 42-48s42 21 42 48v22h-84v-22Z" fill="#3B263D"/><path d="M453 426c10-56 43-86 88-86s78 30 88 86v34H453v-34Z" fill="#F472B6"/><path d="M485 428h112" stroke="#FBCFE8" stroke-opacity=".5" stroke-width="4"/>
+  <rect x="164" y="375" width="144" height="104" rx="14" fill="#27314A" stroke="#FFFFFF" stroke-opacity=".15"/><circle cx="236" cy="408" r="22" fill="url(#avatar2)"/><path d="M214 406c2-17 11-25 22-25s20 8 22 25v8h-44v-8Z" fill="#312E81"/><path d="M197 463c4-27 18-41 39-41s35 14 39 41v6h-78v-6Z" fill="#818CF8"/><text x="181" y="496" fill="#E4E4E7" font-family="Arial,sans-serif" font-size="10">Maya Chen</text>
+  <rect x="635" y="375" width="144" height="104" rx="14" fill="#27314A" stroke="#FFFFFF" stroke-opacity=".15"/><circle cx="707" cy="408" r="22" fill="#FDE68A"/><path d="M685 406c2-17 11-25 22-25s20 8 22 25v8h-44v-8Z" fill="#78350F"/><path d="M668 463c4-27 18-41 39-41s35 14 39 41v6h-78v-6Z" fill="#F59E0B"/><text x="652" y="496" fill="#E4E4E7" font-family="Arial,sans-serif" font-size="10">Alex Morgan</text>
+  <rect x="385" y="497" width="310" height="47" rx="23.5" fill="#11141D" fill-opacity=".82"/>
+  <circle cx="420" cy="520" r="15" fill="#303342"/><path d="M415 515h10v9h-10z" stroke="#E4E4E7" stroke-width="1.5"/><path d="m425 517 5-3v11l-5-3" stroke="#E4E4E7" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="460" cy="520" r="15" fill="#303342"/><path d="M455 513h10v12h-10z" stroke="#E4E4E7" stroke-width="1.5"/><path d="m455 514-4-3m14 3 4-3" stroke="#E4E4E7" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="500" cy="520" r="15" fill="#303342"/><path d="M497 513h6v12h-6z" stroke="#E4E4E7" stroke-width="1.5"/><path d="m496 513-4-2m12 2 4-2m-12 14-4 2m12-2 4 2" stroke="#E4E4E7" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="540" cy="520" r="17" fill="#EF4444"/><path d="m534 514 12 12m0-12-12 12" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="580" cy="520" r="15" fill="#303342"/><path d="M575 514h10v9h-10z" stroke="#E4E4E7" stroke-width="1.5"/><path d="m578 527 2 3 2-3" stroke="#E4E4E7" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="620" cy="520" r="15" fill="#303342"/><path d="M614 520h12m-6-6v12" stroke="#E4E4E7" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="870" y="132" width="251" height="428" rx="20" fill="#191C27" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="894" y="166" fill="#F4F4F5" font-family="Arial,sans-serif" font-size="15" font-weight="700">Messages</text><circle cx="1084" cy="161" r="13" fill="#2B2E3B"/><path d="M1079 161h10m-5-5v10" stroke="#A1A1AA" stroke-width="1.5" stroke-linecap="round"/>
+  <rect x="891" y="184" width="209" height="31" rx="15.5" fill="#262A38"/><circle cx="908" cy="199" r="6" stroke="#A1A1AA" stroke-width="1.3"/><path d="m913 204 5 5" stroke="#A1A1AA" stroke-width="1.3" stroke-linecap="round"/><text x="925" y="203" fill="#A1A1AA" font-family="Arial,sans-serif" font-size="10">Search messages</text>
+  <circle cx="907" cy="250" r="17" fill="#818CF8"/><text x="901" y="254" fill="#fff" font-family="Arial,sans-serif" font-size="11" font-weight="700">MC</text><text x="934" y="247" fill="#E4E4E7" font-family="Arial,sans-serif" font-size="11" font-weight="700">Maya Chen</text><text x="934" y="263" fill="#A1A1AA" font-family="Arial,sans-serif" font-size="9">Can you share the mockup?</text>
+  <circle cx="907" cy="301" r="17" fill="#F59E0B"/><text x="900" y="305" fill="#fff" font-family="Arial,sans-serif" font-size="11" font-weight="700">AM</text><text x="934" y="298" fill="#E4E4E7" font-family="Arial,sans-serif" font-size="11" font-weight="700">Alex Morgan</text><text x="934" y="314" fill="#A1A1AA" font-family="Arial,sans-serif" font-size="9">Audio call · 12 min</text>
+  <rect x="891" y="337" width="193" height="49" rx="13" fill="#292541"/><text x="905" y="357" fill="#DDD6FE" font-family="Arial,sans-serif" font-size="10">Maya: New designs are</text><text x="905" y="373" fill="#DDD6FE" font-family="Arial,sans-serif" font-size="10">ready for feedback ✨</text>
+  <rect x="923" y="397" width="177" height="49" rx="13" fill="#253A3C"/><text x="937" y="417" fill="#CFFAFE" font-family="Arial,sans-serif" font-size="10">You: Just shared the link!</text><text x="937" y="433" fill="#CFFAFE" font-family="Arial,sans-serif" font-size="10">Let's review it together.</text>
+  <rect x="890" y="496" width="210" height="42" rx="21" fill="#262A38"/><text x="907" y="522" fill="#71717A" font-family="Arial,sans-serif" font-size="10">Type a message...</text><circle cx="1077" cy="517" r="14" fill="#8B5CF6"/><path d="m1070 517 12-5-4 12-2-5-6-2Z" fill="#fff"/>
+  <circle cx="904" cy="460" r="3" fill="#34D399"/><text x="914" y="464" fill="#A1A1AA" font-family="Arial,sans-serif" font-size="9">Online</text>
+</svg>

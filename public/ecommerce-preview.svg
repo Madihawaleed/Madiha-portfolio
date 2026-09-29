@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <defs>
+    <linearGradient id="backdrop" x1="84" y1="20" x2="1095" y2="660" gradientUnits="userSpaceOnUse"><stop stop-color="#25152F"/><stop offset=".52" stop-color="#111722"/><stop offset="1" stop-color="#0D2530"/></linearGradient>
+    <linearGradient id="hero" x1="161" y1="181" x2="686" y2="455" gradientUnits="userSpaceOnUse"><stop stop-color="#F3E8FF"/><stop offset="1" stop-color="#E0F2FE"/></linearGradient>
+    <linearGradient id="accent" x1="190" y1="302" x2="405" y2="370" gradientUnits="userSpaceOnUse"><stop stop-color="#D946EF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+    <linearGradient id="shoe" x1="746" y1="253" x2="1019" y2="426" gradientUnits="userSpaceOnUse"><stop stop-color="#E9D5FF"/><stop offset="1" stop-color="#A5F3FC"/></linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="675" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#backdrop)"/>
+  <circle cx="944" cy="306" r="185" fill="#8B5CF6" fill-opacity=".17" filter="url(#shadow)"/>
+  <rect x="55" y="40" width="1090" height="595" rx="24" fill="#F8FAFC"/>
+  <path d="M79 40h1042a24 24 0 0 1 24 24v43H55V64a24 24 0 0 1 24-24Z" fill="#11131A"/>
+  <circle cx="83" cy="74" r="6" fill="#FB7185"/><circle cx="105" cy="74" r="6" fill="#FBBF24"/><circle cx="127" cy="74" r="6" fill="#34D399"/>
+  <rect x="431" y="61" width="340" height="26" rx="13" fill="#242630"/><text x="550" y="79" fill="#A1A1AA" font-family="Arial,sans-serif" font-size="12">yourstore.com</text>
+  <rect x="55" y="107" width="1090" height="64" fill="#fff"/>
+  <path d="M91 128h27l8 8-8 8H91l-8-8 8-8Z" fill="url(#accent)"/><text x="128" y="146" fill="#18181B" font-family="Arial,sans-serif" font-size="19" font-weight="700">NOVA</text>
+  <text x="430" y="145" fill="#52525B" font-family="Arial,sans-serif" font-size="13">New In</text><text x="510" y="145" fill="#52525B" font-family="Arial,sans-serif" font-size="13">Women</text><text x="590" y="145" fill="#52525B" font-family="Arial,sans-serif" font-size="13">Men</text><text x="653" y="145" fill="#52525B" font-family="Arial,sans-serif" font-size="13">Accessories</text>
+  <rect x="925" y="123" width="116" height="31" rx="15.5" fill="#F4F4F5"/><text x="950" y="143" fill="#52525B" font-family="Arial,sans-serif" font-size="11">Search products</text>
+  <circle cx="1073" cy="139" r="16" fill="#F4F4F5"/><path d="M1067 134h12l-1.5 9h-9l-1.5-9Zm2 0a4 4 0 0 1 8 0" stroke="#27272A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="79" y="190" width="1042" height="252" rx="18" fill="url(#hero)"/>
+  <text x="119" y="235" fill="#7C3AED" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2">CURATED FOR EVERY DAY</text>
+  <text x="119" y="286" fill="#18181B" font-family="Arial,sans-serif" font-size="39" font-weight="700">Find your next</text><text x="119" y="331" fill="#18181B" font-family="Arial,sans-serif" font-size="39" font-weight="700">favorite thing.</text>
+  <text x="121" y="361" fill="#71717A" font-family="Arial,sans-serif" font-size="13">Thoughtful essentials, made to move with you.</text>
+  <rect x="119" y="384" width="132" height="39" rx="19.5" fill="url(#accent)"/><text x="143" y="409" fill="#fff" font-family="Arial,sans-serif" font-size="12" font-weight="700">Shop collection</text>
+  <ellipse cx="897" cy="393" rx="150" ry="18" fill="#111827" fill-opacity=".12"/>
+  <path d="M751 353c22-12 41-40 56-74 8-18 19-33 34-42 9-5 21-4 29 3l31 27 55 19c14 5 23 15 30 28l26 47c6 11-2 24-15 24H767c-23 0-34-20-16-32Z" fill="url(#shoe)" stroke="#fff" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m834 282 40 25m-54-7 42 26m-58-7 41 26" stroke="#8B5CF6" stroke-width="7" stroke-linecap="round"/><path d="M748 360c62 8 191 8 268-2" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <text x="81" y="482" fill="#18181B" font-family="Arial,sans-serif" font-size="18" font-weight="700">Trending right now</text><text x="1021" y="481" fill="#7C3AED" font-family="Arial,sans-serif" font-size="12" font-weight="700">VIEW ALL  →</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="80" y="500" width="245" height="112" rx="13" fill="#F4F4F5"/><rect x="92" y="511" width="74" height="88" rx="9" fill="#E9D5FF"/><path d="M108 552h43l-6 28h-31l-6-28Zm8-6a13 13 0 0 1 27 0" stroke="#7C3AED" stroke-width="3" stroke-linejoin="round"/><text x="178" y="540" fill="#27272A" font-size="12" font-weight="700">Everyday Tote</text><text x="178" y="560" fill="#71717A" font-size="10">Minimal carry, maximum ease</text><text x="178" y="587" fill="#18181B" font-size="13" font-weight="700">$48.00</text>
+    <rect x="344" y="500" width="245" height="112" rx="13" fill="#F4F4F5"/><rect x="356" y="511" width="74" height="88" rx="9" fill="#CFFAFE"/><path d="M375 537h37l-3 43h-31l-3-43Zm8 0v-7a11 11 0 0 1 21 0v7" stroke="#0891B2" stroke-width="3" stroke-linejoin="round"/><text x="442" y="540" fill="#27272A" font-size="12" font-weight="700">Cloud Knit</text><text x="442" y="560" fill="#71717A" font-size="10">Soft layers for every day</text><text x="442" y="587" fill="#18181B" font-size="13" font-weight="700">$72.00</text>
+    <rect x="608" y="500" width="245" height="112" rx="13" fill="#F4F4F5"/><rect x="620" y="511" width="74" height="88" rx="9" fill="#FCE7F3"/><path d="M637 542h40l-4 37h-32l-4-37Zm7 0v-7a13 13 0 0 1 26 0v7" stroke="#DB2777" stroke-width="3" stroke-linejoin="round"/><text x="706" y="540" fill="#27272A" font-size="12" font-weight="700">Daily Crossbody</text><text x="706" y="560" fill="#71717A" font-size="10">Made for the city</text><text x="706" y="587" fill="#18181B" font-size="13" font-weight="700">$64.00</text>
+    <rect x="872" y="500" width="245" height="112" rx="13" fill="#F4F4F5"/><rect x="884" y="511" width="74" height="88" rx="9" fill="#D1FAE5"/><path d="M900 551h41l-4 29h-33l-4-29Zm7-2c1-15 25-15 27 0" stroke="#059669" stroke-width="3" stroke-linejoin="round"/><text x="970" y="540" fill="#27272A" font-size="12" font-weight="700">Weekend Sneaker</text><text x="970" y="560" fill="#71717A" font-size="10">Lightweight comfort</text><text x="970" y="587" fill="#18181B" font-size="13" font-weight="700">$89.00</text>
+  </g>
+</svg>
