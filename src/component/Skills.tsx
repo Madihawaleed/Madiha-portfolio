@@ -60,17 +60,17 @@ function Skills() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group, index) => (
           <ScrollReveal key={group.title} delayMs={index * 100}>
-          <article className="group relative h-full overflow-hidden rounded-3xl border border-white/[0.08] bg-[linear-gradient(135deg,rgba(217,70,239,0.065),rgba(255,255,255,0.025)_40%,rgba(34,211,238,0.055))] p-7 shadow-lg shadow-gray-400/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-xl hover:shadow-gray-300/20">
+          <article className="expertise-card hero-skills-panel group relative h-full overflow-hidden rounded-3xl p-4 shadow-lg shadow-gray-400/10 backdrop-blur-xl transition duration-300 hover:-translate-y-1 sm:p-5">
             <div aria-hidden="true" className={`pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r ${group.accent} opacity-50 transition-opacity duration-300 group-hover:opacity-90`} />
             <div aria-hidden="true" className={`absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br ${group.accent} opacity-[0.07] blur-3xl transition duration-500 group-hover:opacity-[0.13]`} />
             <div className="relative">
               <div className="flex items-center justify-between"><span className="text-sm text-zinc-600">{group.number}</span><span className={`h-px w-16 bg-gradient-to-r ${group.accent}`} /></div>
-              <h3 className="mt-16 text-2xl font-semibold tracking-tight text-white">{group.title}</h3>
-              <p className="mt-3 min-h-14 text-sm leading-6 text-zinc-400">{group.description}</p>
-              <div className="mt-8 grid grid-cols-2 gap-2">
+              <h3 className="mt-6 text-xl font-semibold tracking-tight text-white">{group.title}</h3>
+              <p className="mt-2 min-h-12 text-sm leading-5 text-zinc-400">{group.description}</p>
+              <div className="mt-4 grid grid-cols-2 gap-2">
                 {group.skills.map(({ name, icon: Icon, color }) => (
-                  <div key={name} className="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-black/15 px-3 py-3 text-xs text-zinc-300 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-200/20 hover:bg-white/[0.055]">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.08]"><Icon className={`text-lg ${color}`} /></span>
+                  <div key={name} className="expertise-skill-chip flex min-w-0 items-center gap-2 rounded-xl px-2 py-2 text-xs text-zinc-300 transition duration-300 hover:-translate-y-0.5">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.08]"><Icon className={`text-base ${color}`} /></span>
                     <span>{name}</span>
                   </div>
                 ))}

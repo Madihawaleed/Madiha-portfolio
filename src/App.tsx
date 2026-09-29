@@ -1,4 +1,5 @@
-import { FaArrowRight, FaHandPaper, FaWhatsapp } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
+import { FaArrowRight, FaHandPaper, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa'
 import { FaAws, FaBrain, FaLayerGroup } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 import {
@@ -19,6 +20,8 @@ const heroSkills = [
   'CI/CD', 'MongoDB', 'PostgreSQL', 'Prisma ORM', 'AWS Cloud', 'Docker', 'Redis', 'Kafka',
   'RabbitMQ', 'BullMQ', 'Git', 'Jira', 'Ant Design', 'Remix Icon', 'Font Awesome',
 ]
+const heroTitles = ['Full Stack Developer', 'Software Engineer']
+const highlightedHeroSkills = new Set(['Next.js', 'Node.js', 'Express.js', 'TypeScript', 'Docker', 'CI/CD'])
 
 const heroSkillIcons: Record<string, IconType> = {
   'Gen AI': FaBrain,
@@ -46,6 +49,121 @@ const heroSkillIcons: Record<string, IconType> = {
 }
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
+  const [titleText, setTitleText] = useState('')
+
+  useEffect(() => {
+    let frame = 0
+    const handleAnchorClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+      if (!(event.target instanceof Element)) return
+      const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]')
+      if (!link) return
+      const id = decodeURIComponent(link.hash.slice(1))
+      const target = document.getElementById(id)
+      if (!target) return
+
+      event.preventDefault()
+      cancelAnimationFrame(frame)
+      history.pushState(null, '', link.hash)
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      const top = target.getBoundingClientRect().top + window.scrollY - 88
+      if (reduceMotion) {
+        window.scrollTo(0, top)
+        return
+      }
+
+      const start = window.scrollY
+      const distance = top - start
+      const duration = Math.min(3400, Math.max(2200, Math.abs(distance) * 1.2))
+      const startTime = performance.now()
+      const animateScroll = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1)
+        const eased = progress < 0.5
+          ? 16 * progress ** 5
+          : 1 - (-2 * progress + 2) ** 5 / 2
+        window.scrollTo(0, start + distance * eased)
+        if (progress < 1) frame = requestAnimationFrame(animateScroll)
+      }
+      frame = requestAnimationFrame(animateScroll)
+    }
+
+    document.addEventListener('click', handleAnchorClick)
+    return () => {
+      document.removeEventListener('click', handleAnchorClick)
+      cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  useEffect(() => {
+    let titleIndex = 0
+    let characterIndex = 0
+    let deleting = false
+    let timer: number
+
+    const animateTitle = () => {
+      const title = heroTitles[titleIndex]
+      characterIndex += deleting ? -1 : 1
+      setTitleText(title.slice(0, characterIndex))
+
+      let delay = deleting ? 38 : 72
+      if (!deleting && characterIndex === title.length) {
+        deleting = true
+        delay = 1500
+      } else if (deleting && characterIndex === 0) {
+        deleting = false
+        titleIndex = (titleIndex + 1) % heroTitles.length
+        delay = 350
+      }
+      timer = window.setTimeout(animateTitle, delay)
+    }
+
+    timer = window.setTimeout(animateTitle, 250)
+    return () => window.clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const sections = ['work', 'skills', 'why-hire-me', 'contact']
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null)
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+      if (visible) setActiveSection(visible.target.id)
+    }, { rootMargin: '-18% 0px -62% 0px', threshold: [0, 0.15, 0.35, 0.6] })
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+    const closeOnOutsideClick = (event: PointerEvent) => {
+      if (event.target instanceof Element && !event.target.closest('[data-site-nav]')) setMenuOpen(false)
+    }
+    const closeOnDesktop = () => {
+      if (window.innerWidth > 720) setMenuOpen(false)
+    }
+
+    document.addEventListener('keydown', closeOnEscape)
+    document.addEventListener('pointerdown', closeOnOutsideClick)
+    window.addEventListener('resize', closeOnDesktop)
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape)
+      document.removeEventListener('pointerdown', closeOnOutsideClick)
+      window.removeEventListener('resize', closeOnDesktop)
+    }
+  }, [menuOpen])
+
+  const navItems = [
+    { label: 'Work', id: 'work' }, { label: 'Skills', id: 'skills' },
+    { label: 'Why Hire Me', id: 'why-hire-me' }, { label: 'Contact', id: 'contact' },
+  ]
+
   return (
     <main className="min-h-screen overflow-hidden bg-[#090a0e] text-zinc-100">
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
@@ -56,18 +174,18 @@ function App() {
       </div>
 
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-6 lg:px-8">
-        <nav className="animate__animated animate__fadeInDown sticky top-0 z-30 -mx-5 flex flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] bg-[#090a0e]/85 px-5 py-4 backdrop-blur-xl transition-colors duration-300 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8" aria-label="Main navigation">
+        <nav data-site-nav className="site-nav animate__animated animate__fadeInDown fixed top-0 left-0 z-30 flex w-full flex-wrap items-center justify-between gap-4 border-b border-white/[0.08] bg-[#090a0e]/90 px-5 py-4 backdrop-blur-xl transition-colors duration-300 sm:px-6 lg:px-8" aria-label="Main navigation">
           <a href="#home" className="inline-flex items-center gap-2 text-xl font-bold tracking-tight"><span className="brand-gray-shimmer ">Hi! Madiha.</span><FaHandPaper aria-hidden="true" className="hello-wave text-amber-200" /></a>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-zinc-400 sm:gap-7">
-            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#work">Work</a>
-            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#skills">Skills</a>
-            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#why-hire-me">Why Hire Me</a>
-            <a className="transition duration-300 hover:-translate-y-0.5 hover:text-white" href="#contact">Contact</a>
+          <div id="primary-navigation" className={`nav-links ${menuOpen ? 'nav-links-open' : ''}`}>
+            {navItems.map(({ label, id }) => <a key={id} aria-current={activeSection === id ? 'location' : undefined} className={`nav-link ${activeSection === id ? 'nav-link-active' : ''}`} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
           </div>
-          <a href="#contact" className="rounded-full border border-white/15 bg-gradient-to-r from-fuchsia-300 via-violet-300 to-cyan-300 px-5 py-2.5 text-sm font-semibold text-[#101116] shadow-md shadow-violet-950/20 transition duration-300 hover:-translate-y-0.5 hover:from-fuchsia-200 hover:via-violet-200 hover:to-cyan-200 hover:shadow-violet-900/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090a0e]">Let&apos;s Talk</a>
+          <div className="nav-actions">
+            <a href="#contact" className="talk-cta ">Let&apos;s Talk <FaArrowRight aria-hidden="true" /></a>
+            <button className="menu-toggle animate__animated  animate-pulse animate-infinite" type="button" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <FaTimes /> : <FaBars />}</button>
+          </div>
         </nav>
 
-        <section id="home" className="reveal-section relative isolate grid min-h-[calc(100vh-80px)] items-center gap-12 py-16 sm:gap-16 sm:py-20 lg:grid-cols-[1.1fr_.9fr]">
+        <section id="home" className="reveal-section relative isolate grid min-h-screen items-start gap-8 pt-24 pb-10 sm:gap-10 sm:pt-28 sm:pb-12 lg:grid-cols-[1.1fr_.9fr] lg:gap-12">
           <div aria-hidden="true" className="hero-float-field pointer-events-none absolute inset-0 z-0 overflow-hidden">
             <span className="hero-float-dot hero-float-dot--1 hero-float-horizontal hero-float-dot--fuchsia hero-float-dot--glow" />
             <span className="hero-float-dot hero-float-dot--2 hero-float-vertical hero-float-dot--violet" />
@@ -86,41 +204,47 @@ function App() {
             <span className="hero-float-dot hero-float-dot--15 hero-float-orbit hero-float-dot--cyan hero-float-dot--glow" />
           </div>
           <div className="animate__animated animate__fadeInLeft relative z-10">
-            <div className="mb-5 flex items-center gap-2">
+            <div className="mb-3 flex items-center gap-2">
               <span className="availability-pulse h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.4)]" />
               <span className="availability-copy text-sm font-medium text-emerald-200/90">Open to New Opportunities</span>
             </div>
-            <h1 className="mb-8">
+            <h1 className="mb-3">
+              <span className="hero-intro">I&apos;m a</span>
               <span className="developer-title-frame relative inline-block rounded-xl px-2 py-1">
-                <span className="animate__animated animate__heartBeat animate__infinite bg-gradient-to-r from-white via-fuchsia-200 to-cyan-200 bg-clip-text text-5xl font-bold leading-tight tracking-[-0.045em] text-transparent">
-                  Full Stack Developer
+                <span className="developer-title bg-gradient-to-r from-white via-fuchsia-200 to-cyan-200 bg-clip-text text-5xl font-bold leading-tight tracking-[-0.045em] text-transparent">
+                  {titleText}<span className="typewriter-caret" aria-hidden="true" />
                 </span>
               </span>
 
               <span className="mt-3 block h-[2px] w-24 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 opacity-80" />
             </h1>
-            <div className="mb-4 mt-1 flex items-center gap-3">
-              <span className="mt-3 block h-[2px] w-8 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 opacity-80" />
-              <h2 className="bg-gradient-to-r from-fuchsia-200 via-violet-200 to-cyan-200 bg-clip-text text-sm font-semibold tracking-[0.12em] text-transparent transition duration-300 hover:tracking-[0.16em]">My Skills</h2>
-              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-violet-300 to-cyan-300 shadow-[0_0_8px_rgba(139,92,246,0.25)]" />
-            </div>
-            <div className="flex max-w-3xl flex-wrap gap-2" aria-label="Technical skills">
-              {heroSkills.map((skill) => {
-                const SkillIcon = heroSkillIcons[skill]
-                return (
-                  <span key={skill} className="hero-skill-chip group inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium text-zinc-300 sm:text-sm">
-                    <SkillIcon aria-hidden="true" className="hero-skill-icon shrink-0" size={17} color="#c4b5fd" />
-                    <span className="bg-gradient-to-r from-fuchsia-200 via-violet-200 to-cyan-200 bg-clip-text text-transparent">{skill}</span>
-                  </span>
-                )
-              })}
-            </div>
-            <a href="#why-hire-me" className="animate__animated animate__pulse animate__infinite hire-me-attention group mt-7 inline-flex min-h-11 items-center justify-center gap-2.5 rounded-full border border-white/10 bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 px-5 py-2.5 text-sm font-semibold text-[#101116] shadow-[0_6px_20px_rgba(139,92,246,0.16)] transition duration-300 hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-[0_8px_24px_rgba(139,92,246,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090a0e]">
+            <p className="hero-summary">I create polished, reliable full-stack applications from idea to launch.</p>
+            <section className="hero-skills-panel hero-portfolio-skills-panel mt-3 max-w-3xl rounded-2xl p-3 sm:p-4" aria-labelledby="hero-skills-title">
+              <div className="mb-2 flex items-center gap-3">
+                <span className="block h-[2px] w-8 rounded-full bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-500 opacity-80" />
+                <h2 id="hero-skills-title" className="bg-gradient-to-r from-fuchsia-200 via-violet-200 to-cyan-200 bg-clip-text text-sm font-semibold tracking-[0.12em] text-transparent">My Skills</h2>
+                <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-violet-300 to-cyan-300 shadow-[0_0_8px_rgba(139,92,246,0.25)]" />
+              </div>
+              <div className="hero-skills-grid" aria-label="Technical skills">
+                {heroSkills.map((skill) => {
+                  const SkillIcon = heroSkillIcons[skill]
+                  const highlighted = highlightedHeroSkills.has(skill)
+                  return (
+                    <span key={skill} className={`hero-skill-chip group inline-flex min-w-0 items-center gap-1.5 rounded-lg px-2 py-1.5 text-[11px] sm:text-xs ${highlighted ? 'hero-skill-chip--highlighted' : ''}`}>
+                      <SkillIcon aria-hidden="true" className="hero-skill-icon shrink-0" size={16} color={highlighted ? '#e9d5ff' : '#c4b5fd'} />
+                      <span className="truncate">{skill}</span>
+                      {highlighted && <span aria-label="Core skill" className="hero-skill-indicator ml-auto shrink-0" />}
+                    </span>
+                  )
+                })}
+              </div>
+            </section>
+            <a href="#why-hire-me" className="hire-me-attention group mt-2 inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-fuchsia-300 via-violet-300 to-cyan-300 px-5 py-2 text-sm font-semibold text-[#101116] shadow-[0_8px_32px_rgba(139,92,246,0.24)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_38px_rgba(139,92,246,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090a0e]">
               Hire Me <FaArrowRight aria-hidden="true" className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
             </a>
           </div>
 
-          <div className="animate__animated animate__fadeInRight relative z-10 mx-auto w-full max-w-xs">
+          <div className="animate__animated animate__fadeInRight relative z-10 mx-auto w-full max-w-xs lg:self-center">
             <div className="profile-image-frame relative rounded-lg p-[2px]">
               <img src="/profile.jpeg" alt="Madiha's professional profile" decoding="async" fetchPriority="high" className="relative z-[1] block h-auto w-full rounded-[calc(0.5rem-2px)] object-contain shadow-lg shadow-gray-500/20" />
             </div>
@@ -146,8 +270,7 @@ function App() {
         <ScrollReveal><footer className="border-t border-white/10 py-8 text-center text-sm text-zinc-500">&copy; {new Date().getFullYear()} Madiha. Thanks for visiting.</footer></ScrollReveal>
       </div>
 
-      <a href="https://wa.me/14695409948" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-3xl text-white shadow-lg shadow-green-900/30 transition hover:scale-105 hover:bg-[#20bd5a]"><FaWhatsapp /></a>
-      <a href="#why-hire-me" className="fixed bottom-6 right-24 z-40 rounded-full border border-white/15 bg-zinc-900/95 px-4 py-3 text-xs font-semibold tracking-wide text-zinc-100 shadow-lg shadow-black/30 backdrop-blur transition hover:border-cyan-400/40 hover:bg-zinc-800 sm:px-5 sm:text-sm">Hire Me</a>
+      <a href="https://wa.me/14695409948" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" className="whatsapp-cta"><FaWhatsapp aria-hidden="true" /><span>Chat on WhatsApp</span></a>
     </main>
   )
 }
