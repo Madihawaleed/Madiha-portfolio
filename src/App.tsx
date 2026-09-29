@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FaArrowRight, FaHandPaper, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa'
+import { FaArrowRight, FaHandPaper, FaHandPointLeft, FaWhatsapp, FaBars, FaTimes } from 'react-icons/fa'
 import { FaAws, FaBrain, FaLayerGroup } from 'react-icons/fa'
 import type { IconType } from 'react-icons'
 import {
@@ -181,6 +181,7 @@ function App() {
           </div>
           <div className="nav-actions">
             <a href="#contact" className="talk-cta ">Let&apos;s Talk <FaArrowRight aria-hidden="true" /></a>
+            <FaHandPointLeft aria-hidden="true" className="talk-pointing-hand text-lg text-amber-200" />
             <button className="menu-toggle animate__animated  animate-pulse animate-infinite" type="button" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <FaTimes /> : <FaBars />}</button>
           </div>
         </nav>
@@ -239,9 +240,12 @@ function App() {
                 })}
               </div>
             </section>
-            <a href="#why-hire-me" className="hire-me-attention group mt-2 inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-fuchsia-300 via-violet-300 to-cyan-300 px-5 py-2 text-sm font-semibold text-[#101116] shadow-[0_8px_32px_rgba(139,92,246,0.24)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_38px_rgba(139,92,246,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090a0e]">
-              Hire Me <FaArrowRight aria-hidden="true" className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
-            </a>
+            <div className="hire-button-wrap mt-2 inline-flex items-center gap-2">
+              <a href="#why-hire-me" className="hire-me-attention group inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-white/10 bg-gradient-to-r from-fuchsia-300 via-violet-300 to-cyan-300 px-5 py-2 text-sm font-semibold text-[#101116] shadow-[0_8px_32px_rgba(139,92,246,0.24)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_38px_rgba(139,92,246,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-200 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090a0e]">
+                Hire Me <FaArrowRight aria-hidden="true" className="text-xs transition-transform duration-300 group-hover:translate-x-0.5" />
+              </a>
+              <FaHandPointLeft aria-hidden="true" className="hire-pointing-hand text-xl text-amber-200" />
+            </div>
           </div>
 
           <div className="animate__animated animate__fadeInRight relative z-10 mx-auto w-full max-w-xs lg:self-center">

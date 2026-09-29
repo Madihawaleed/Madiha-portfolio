@@ -57,6 +57,8 @@ html {
 .hero-skill-icon { transition: transform .25s ease; }
 .hero-skill-chip:hover .hero-skill-icon { transform: scale(1.08); }
 .hire-me-attention { position: relative; isolation: isolate; animation: cta-breathe 3.8s ease-in-out infinite; }
+.hire-pointing-hand, .talk-pointing-hand { animation: hire-point-pulse 1.2s ease-in-out infinite; }
+@keyframes hire-point-pulse { 0%, 100% { opacity: .75; transform: translateX(0); } 50% { opacity: 1; transform: translateX(-4px); } }
 .hire-me-attention::before { position: absolute; z-index: -1; inset: -2px; border-radius: inherit; content: ''; background: linear-gradient(100deg,#e879f9,#8b5cf6,#67e8f9,#e879f9); background-size: 240% 100%; opacity: .55; filter: blur(9px); animation: border-flow 6s linear infinite; }
 .whatsapp-cta { position: fixed; z-index: 50; right: 1.5rem; bottom: 1.5rem; display: inline-flex; min-height: 3.5rem; align-items: center; justify-content: center; gap: .65rem; padding: 0 1.15rem; border: 1px solid #86efac77; border-radius: 999px; background: linear-gradient(135deg,#167c45,#25d366); color: white; font-size: .875rem; font-weight: 650; box-shadow: 0 8px 30px #16a34a3b,0 0 0 1px #ffffff10; animation: cta-breathe 4s ease-in-out infinite; transition: transform .25s,box-shadow .25s; }
 .whatsapp-cta::before { position: absolute; z-index: -1; inset: -3px; border: 1px solid transparent; border-radius: inherit; content: ''; background: linear-gradient(110deg,#4ade80,#67e8f9,#86efac,#4ade80) border-box; background-size: 240% 100%; mask: linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0); mask-composite: exclude; animation: border-flow 5s linear infinite; }
@@ -437,7 +439,7 @@ html {
     animation: none;
   }
 
-  .talk-cta, .hire-me-attention, .whatsapp-cta, .developer-title, .typewriter-caret, .hero-skill-chip:hover,
+  .talk-cta, .hire-me-attention, .hire-pointing-hand, .talk-pointing-hand, .whatsapp-cta, .developer-title, .typewriter-caret, .hero-skill-chip:hover,
   .whatsapp-cta::before, .hire-me-attention::before { animation: none; }
   .talk-cta, .hire-me-attention, .whatsapp-cta, .hero-skill-chip { transition: none; }
   .nav-link, .nav-link::after, .nav-links { transition: none; }
