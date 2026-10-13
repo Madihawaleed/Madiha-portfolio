@@ -6,7 +6,19 @@ import FloatingDots from './FloatingDots'
 
 const projects = [
   { title: 'E-commerce Platform', image: '/ecommerce-preview.svg', description: 'Modern e-commerce platform with authentication, products, cart and checkout.', tech: ['Next.js', 'React', 'TypeScript', 'MongoDB', 'Stripe', 'AWS', 'Git'] },
-  { title: 'Video Streaming Platform', image: '/video-chat-preview.svg', description: 'Real-time communication platform for video and audio calls, with live messaging and collaboration.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Git', 'AWS'] },
+  {
+    title: 'Video Streaming', image: '/home.png', previewLabel: 'FileMoon', description: 'Real-time communication platform for video and audio calls, with live messaging and collaboration..', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'AWS S3'], features: [
+      'Real-Time Chat – Instant messaging with emoji support',
+
+      'Video Calling – HD video calls for face-to-face communication',
+
+      'Audio Calling – Clear voice calls for easy communication',
+
+      'User Authentication – Secure login and signup functionality',
+
+      'Responsive UI – Modern design for all screen sizes'
+    ]
+  },
   {
     title: 'File Sharing and Hosting Platform', image: '/filemoon.png', previewLabel: 'FileMoon', description: 'A secure file sharing and hosting platform for uploading, downloading, organizing, and sharing files using cloud storage.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'AWS S3'], features: [
       'Secure authentication with access and refresh tokens.',
@@ -18,7 +30,7 @@ const projects = [
   },
 
   {
-    title: 'Servantly', image: '/image.png', previewLabel: 'Servantly', description: 'A servant booking platform connecting users with approved servant profiles.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'AWS S3'], liveDemo: 'https://madiha-waleed.shop/', features: [
+    title: 'Servantly', image: '/image.png', previewLabel: 'Servantly', description: 'A servant booking platform connecting users with approved servant profiles.', tech: ['Next.js', 'Node.js', 'Express.js', 'MongoDB', 'AWS S3'], liveDemo: 'https://madiha-waleed.shop/', features: [
       'Role-based authentication for users, servants, and admins.',
       'Servant registration and admin approval workflow.',
       'Location-based search for approved servant profiles.',
