@@ -5,9 +5,30 @@ import ScrollReveal from './ScrollReveal'
 import FloatingDots from './FloatingDots'
 
 const projects = [
-  { title: 'E-commerce Platform', image: '/ecommerce-preview.svg', description: 'Modern e-commerce platform with authentication, products, cart and checkout.', tech: ['Next.js', 'React', 'TypeScript', 'MongoDB', 'Stripe', 'AWS', 'Git'] },
   {
-    title: 'Video Streaming', image: '/home.png', previewLabel: 'FileMoon', description: 'Real-time communication platform for video and audio calls, with live messaging and collaboration..', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'AWS S3'], features: [
+    title: 'Servantly', image: '/image.png', previewLabel: 'Servantly', description: 'A servant booking platform connecting users with approved servant profiles.', tech: ['Next.js', 'TailwindCss', 'Node.js', "TypeScript", 'Express.js', 'MongoDB Atlas', 'AWS EC2/Route53/Amplify', 'Git', 'Docker', 'CI/CD', "Stripe"], liveDemo: 'https://madiha-waleed.shop/', features: [
+      'Role-based authentication for users, servants, and admins.',
+      'Servant registration and admin approval workflow.',
+      'Location-based search for approved servant profiles.',
+      'Booking system with availability and working hours.',
+      'Servant dashboards and admin management panel.',
+    ]
+  },
+  {
+    title: 'E-commerce Platform', image: '/ecommerce-preview.svg', previewLabel: 'E-commerce', description: 'Modern e-commerce platform with authentication, products, cart and checkout', tech: ['Next.js', 'TailwindCss', 'Node.js', "TypeScript", 'Express.js', 'MongoDB Atlas', 'AWS EC2/S3/Route53/Amplify', 'Git', 'Docker', 'CI/CD'], features: [
+      'User Authentication – Secure Login and Sign Up',
+
+      'Product Management – Browse, search, and filter products',
+
+      'Shopping Cart – Add, remove, and update product quantities',
+
+      'Order Management – Place orders and track order status',
+
+      'Secure Payments – Online payments with Stripe integration.'
+    ]
+  },
+  {
+    title: 'Video Streaming', image: '/home.png', previewLabel: 'FileMoon', description: 'Real-time communication platform for video and audio calls, with live messaging and collaboration..', tech: ['React.js', 'TailwindCss', 'Node.js', "TypeScript", 'Express.js', 'MongoDB Atlas', 'AWS EC2/S3/Route53/Amplify', 'Git', 'Docker', 'CI/CD'], features: [
       'Real-Time Chat – Instant messaging with emoji support',
 
       'Video Calling – HD video calls for face-to-face communication',
@@ -20,7 +41,7 @@ const projects = [
     ]
   },
   {
-    title: 'File Sharing and Hosting Platform', image: '/filemoon.png', previewLabel: 'FileMoon', description: 'A secure file sharing and hosting platform for uploading, downloading, organizing, and sharing files using cloud storage.', tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'AWS S3'], features: [
+    title: 'File Sharing and Hosting Platform', image: '/filemoon.png', previewLabel: 'FileMoon', description: 'A secure file sharing and hosting platform for uploading, downloading, organizing, and sharing files using cloud storage.', tech: ['React.js', 'TailwindCss', 'Node.js', "TypeScript", 'Express.js', 'MongoDB Atlas', 'AWS EC2/S3/Route53/Amplify', 'Git', 'Docker', 'CI/CD'], features: [
       'Secure authentication with access and refresh tokens.',
       'File upload, download, and deletion using AWS S3.',
       'Secure file sharing with specific recipients via email.',
@@ -29,15 +50,7 @@ const projects = [
     ]
   },
 
-  {
-    title: 'Servantly', image: '/image.png', previewLabel: 'Servantly', description: 'A servant booking platform connecting users with approved servant profiles.', tech: ['Next.js', 'Node.js', 'Express.js', 'MongoDB', 'AWS S3'], liveDemo: 'https://madiha-waleed.shop/', features: [
-      'Role-based authentication for users, servants, and admins.',
-      'Servant registration and admin approval workflow.',
-      'Location-based search for approved servant profiles.',
-      'Booking system with availability and working hours.',
-      'Servant dashboards and admin management panel.',
-    ]
-  },
+
 ]
 
 const Projects = () => {
